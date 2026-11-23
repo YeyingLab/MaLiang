@@ -1,0 +1,1061 @@
+{
+ "clips": [
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000000",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 0,
+   "ext_source": "cond_ext",
+   "words": 404
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002208",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2208,
+   "ext_source": "cond_ext_canvas",
+   "words": 400
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000000",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 0,
+   "ext_source": "cond_ext",
+   "words": 405
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002304",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2304,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000000",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 0,
+   "ext_source": "cond_ext",
+   "words": 402
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002208",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2208,
+   "ext_source": "cond_ext",
+   "words": 370
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000000",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 0,
+   "ext_source": "cond_ext",
+   "words": 362
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002304",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2304,
+   "ext_source": "cond_ext",
+   "words": 396
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000000",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 0,
+   "ext_source": "cond_ext",
+   "words": 392
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002304",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2304,
+   "ext_source": "cond_ext",
+   "words": 362
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000096",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 96,
+   "ext_source": "cond_ext_canvas",
+   "words": 405
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002112",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2112,
+   "ext_source": "cond_ext_canvas",
+   "words": 405
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000096",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 96,
+   "ext_source": "cond_ext_canvas",
+   "words": 402
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002208",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2208,
+   "ext_source": "cond_ext_canvas",
+   "words": 363
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000096",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 96,
+   "ext_source": "cond_ext_canvas",
+   "words": 370
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002400",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2400,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000096",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 96,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002400",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2400,
+   "ext_source": "cond_ext",
+   "words": 376
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000096",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 96,
+   "ext_source": "cond_ext",
+   "words": 402
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002400",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2400,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000192",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 192,
+   "ext_source": "cond_ext_canvas",
+   "words": 403
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002400",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2400,
+   "ext_source": "cond_ext_canvas",
+   "words": 404
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000192",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 192,
+   "ext_source": "cond_ext_canvas",
+   "words": 390
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002400",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2400,
+   "ext_source": "cond_ext_canvas",
+   "words": 405
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000192",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 192,
+   "ext_source": "cond_ext_canvas",
+   "words": 364
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002112",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2112,
+   "ext_source": "cond_ext",
+   "words": 406
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000192",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 192,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002208",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2208,
+   "ext_source": "cond_ext",
+   "words": 370
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000192",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 192,
+   "ext_source": "cond_ext",
+   "words": 395
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002208",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2208,
+   "ext_source": "cond_ext",
+   "words": 362
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000288",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 288,
+   "ext_source": "cond_ext_canvas",
+   "words": 377
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002016",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2016,
+   "ext_source": "cond_ext_canvas",
+   "words": 403
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000384",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 384,
+   "ext_source": "cond_ext_canvas",
+   "words": 363
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002112",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2112,
+   "ext_source": "cond_ext_canvas",
+   "words": 369
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000288",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 288,
+   "ext_source": "cond_ext_canvas",
+   "words": 370
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002496",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2496,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000288",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 288,
+   "ext_source": "cond_ext",
+   "words": 374
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002592",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2592,
+   "ext_source": "cond_ext",
+   "words": 396
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000288",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 288,
+   "ext_source": "cond_ext",
+   "words": 392
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002496",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2496,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000384",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 384,
+   "ext_source": "cond_ext_canvas",
+   "words": 384
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002496",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2496,
+   "ext_source": "cond_ext_canvas",
+   "words": 405
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000480",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 480,
+   "ext_source": "cond_ext_canvas",
+   "words": 377
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002496",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2496,
+   "ext_source": "cond_ext_canvas",
+   "words": 401
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000384",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 384,
+   "ext_source": "cond_ext_canvas",
+   "words": 370
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002016",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2016,
+   "ext_source": "cond_ext",
+   "words": 401
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000384",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 384,
+   "ext_source": "cond_ext",
+   "words": 362
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002112",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2112,
+   "ext_source": "cond_ext",
+   "words": 364
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000480",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 480,
+   "ext_source": "cond_ext",
+   "words": 381
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002112",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2112,
+   "ext_source": "cond_ext",
+   "words": 374
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000480",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 480,
+   "ext_source": "cond_ext_canvas",
+   "words": 371
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001824",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 1824,
+   "ext_source": "cond_ext_canvas",
+   "words": 383
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000576",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 576,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002016",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2016,
+   "ext_source": "cond_ext_canvas",
+   "words": 363
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000576",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 576,
+   "ext_source": "cond_ext_canvas",
+   "words": 406
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002592",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2592,
+   "ext_source": "cond_ext",
+   "words": 362
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000480",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 480,
+   "ext_source": "cond_ext",
+   "words": 402
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002688",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2688,
+   "ext_source": "cond_ext",
+   "words": 397
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000576",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 576,
+   "ext_source": "cond_ext",
+   "words": 381
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002592",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2592,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000576",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 576,
+   "ext_source": "cond_ext_canvas",
+   "words": 389
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002592",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2592,
+   "ext_source": "cond_ext_canvas",
+   "words": 376
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000672",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 672,
+   "ext_source": "cond_ext_canvas",
+   "words": 363
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002592",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2592,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000672",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 672,
+   "ext_source": "cond_ext_canvas",
+   "words": 406
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001920",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 1920,
+   "ext_source": "cond_ext",
+   "words": 388
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000576",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 576,
+   "ext_source": "cond_ext",
+   "words": 406
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002016",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2016,
+   "ext_source": "cond_ext",
+   "words": 390
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000672",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 672,
+   "ext_source": "cond_ext",
+   "words": 367
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002016",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2016,
+   "ext_source": "cond_ext",
+   "words": 394
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000672",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 672,
+   "ext_source": "cond_ext_canvas",
+   "words": 369
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001728",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 1728,
+   "ext_source": "cond_ext_canvas",
+   "words": 391
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000768",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 768,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__001920",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 1920,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000768",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 768,
+   "ext_source": "cond_ext_canvas",
+   "words": 404
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002688",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2688,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000768",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 768,
+   "ext_source": "cond_ext",
+   "words": 376
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002784",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2784,
+   "ext_source": "cond_ext",
+   "words": 365
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000768",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 768,
+   "ext_source": "cond_ext",
+   "words": 387
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002688",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2688,
+   "ext_source": "cond_ext",
+   "words": 374
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000768",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 768,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002688",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 2688,
+   "ext_source": "cond_ext_canvas",
+   "words": 400
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000864",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 864,
+   "ext_source": "cond_ext_canvas",
+   "words": 369
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002688",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 2688,
+   "ext_source": "cond_ext_canvas",
+   "words": 401
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000864",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 864,
+   "ext_source": "cond_ext_canvas",
+   "words": 376
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001824",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 1824,
+   "ext_source": "cond_ext",
+   "words": 388
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000864",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 864,
+   "ext_source": "cond_ext",
+   "words": 370
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__001824",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 1824,
+   "ext_source": "cond_ext",
+   "words": 404
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000864",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 864,
+   "ext_source": "cond_ext",
+   "words": 399
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__001920",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 1920,
+   "ext_source": "cond_ext",
+   "words": 388
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000864",
+   "subset": "v10_real",
+   "scene": "01_Sunlit_Mediterranean_Courtyard",
+   "run": "R10_s1512",
+   "start": 864,
+   "ext_source": "cond_ext_canvas",
+   "words": 375
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001632",
+   "subset": "v10_real",
+   "scene": "03_Desert_Caravanserai",
+   "run": "R10_s3512",
+   "start": 1632,
+   "ext_source": "cond_ext_canvas",
+   "words": 404
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000960",
+   "subset": "v10_real",
+   "scene": "05_Japanese_Spring_Sanctuary",
+   "run": "R10_s5512",
+   "start": 960,
+   "ext_source": "cond_ext_canvas",
+   "words": 384
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__001728",
+   "subset": "v10_real",
+   "scene": "07_Steampunk_Foundry_District",
+   "run": "R10_s7511",
+   "start": 1728,
+   "ext_source": "cond_ext_canvas",
+   "words": 377
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000960",
+   "subset": "v10_real",
+   "scene": "09_Dense_Cyberpunk_Neon_District",
+   "run": "R10_s9511",
+   "start": 960,
+   "ext_source": "cond_ext_canvas",
+   "words": 403
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002784",
+   "subset": "v9_stylized",
+   "scene": "08_Gothic_Cathedral_Quarter",
+   "run": "P9C_default_s8946",
+   "start": 2784,
+   "ext_source": "cond_ext",
+   "words": 368
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000960",
+   "subset": "v9_stylized",
+   "scene": "06_Overgrown_Tropical_Water_Temple",
+   "run": "P9C_golden_s6946",
+   "start": 960,
+   "ext_source": "cond_ext",
+   "words": 396
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002976",
+   "subset": "v9_stylized",
+   "scene": "10_Underwater_Research_Habitat",
+   "run": "P9C_snow_s10945",
+   "start": 2976,
+   "ext_source": "cond_ext",
+   "words": 387
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000960",
+   "subset": "v9_stylized",
+   "scene": "04_Snowbound_Mountain_Outpost",
+   "run": "P9_autumn_s4908",
+   "start": 960,
+   "ext_source": "cond_ext",
+   "words": 381
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002784",
+   "subset": "v9_stylized",
+   "scene": "02_Autumn_Woodland_Shrine",
+   "run": "P9_golden_s2909",
+   "start": 2784,
+   "ext_source": "cond_ext",
+   "words": 394
+  }
+ ],
+ "n": 100,
+ "data": "data/gc25d_v10_fxcond",
+ "fps_in": 16,
+ "fps_out": 24,
+ "frames_in": 109,
+ "frames_out": 160,
+ "frame_index_rule": "out i -> in floor(i*16/24)",
+ "resize": "832x480 -> 1344x776 then centre crop 1344x768",
+ "palette": {
+  "0": [
+   70,
+   130,
+   180
+  ],
+  "1": [
+   152,
+   251,
+   152
+  ],
+  "2": [
+   128,
+   64,
+   128
+  ],
+  "3": [
+   70,
+   70,
+   70
+  ],
+  "4": [
+   102,
+   102,
+   156
+  ],
+  "5": [
+   107,
+   142,
+   35
+  ],
+  "6": [
+   110,
+   190,
+   160
+  ],
+  "10": [
+   220,
+   20,
+   60
+  ],
+  "11": [
+   255,
+   0,
+   0
+  ],
+  "255": [
+   0,
+   0,
+   0
+  ],
+  "12": [
+   220,
+   20,
+   60
+  ],
+  "13": [
+   220,
+   20,
+   60
+  ],
+  "14": [
+   220,
+   20,
+   60
+  ],
+  "15": [
+   220,
+   20,
+   60
+  ],
+  "16": [
+   220,
+   20,
+   60
+  ],
+  "17": [
+   255,
+   0,
+   0
+  ],
+  "18": [
+   255,
+   0,
+   0
+  ],
+  "19": [
+   255,
+   0,
+   0
+  ],
+  "20": [
+   255,
+   0,
+   0
+  ],
+  "21": [
+   255,
+   0,
+   0
+  ],
+  "22": [
+   170,
+   120,
+   50
+  ],
+  "23": [
+   170,
+   120,
+   50
+  ],
+  "24": [
+   170,
+   120,
+   50
+  ],
+  "25": [
+   170,
+   120,
+   50
+  ]
+ },
+ "class_map": {
+  "0": "sky",
+  "1": "terrain",
+  "2": "road",
+  "3": "building",
+  "4": "wall",
+  "5": "vegetation",
+  "6": "static",
+  "10": "pedestrian",
+  "11": "rider",
+  "255": "unlabeled",
+  "12": "pedestrian",
+  "13": "pedestrian",
+  "14": "pedestrian",
+  "15": "pedestrian",
+  "16": "pedestrian",
+  "17": "rider",
+  "18": "rider",
+  "19": "rider",
+  "20": "rider",
+  "21": "rider",
+  "22": "dynamic",
+  "23": "dynamic",
+  "24": "dynamic",
+  "25": "dynamic"
+ },
+ "caption_rule": "template from scene name, look_name and per-cell action prompts; no GT caption"
+}

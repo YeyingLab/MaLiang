@@ -1,0 +1,32 @@
+# 蒸馏 stage3 的 **2 卡冒烟**版：FSDP1 FULL_SHARD，bf16。由 accelerate_fsdp_dmd_8gpu.yaml 只改 num_processes 8 -> 2。
+# 关键开关同 8 卡版（见那份的注释）：fsdp_use_orig_params: true（false ⇒ 优化器 step 过期张量、模型静默不学）、
+# sync_module_states / cpu_ram_efficient_loading 关、activation checkpointing 交给模型侧（critic 开、rollout 绝不开）。
+# 等效 batch = 2 ≠ 配方的 8 ⇒ run_stage3.sh 要 EFF_BATCH_OVERRIDE=1 才放行：只给冒烟用。
+compute_environment: LOCAL_MACHINE
+debug: false
+distributed_type: FSDP
+downcast_bf16: 'no'
+enable_cpu_affinity: false
+fsdp_config:
+  fsdp_version: 1
+  fsdp_reshard_after_forward: FULL_SHARD
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_transformer_layer_cls_to_wrap: DiTBlock
+  fsdp_backward_prefetch: BACKWARD_PRE
+  fsdp_state_dict_type: SHARDED_STATE_DICT
+  fsdp_offload_params: false
+  fsdp_use_orig_params: true
+  fsdp_sync_module_states: false
+  fsdp_cpu_ram_efficient_loading: false
+  fsdp_activation_checkpointing: false
+machine_rank: 0
+main_training_function: main
+mixed_precision: bf16
+num_machines: 1
+num_processes: 2
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false

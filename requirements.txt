@@ -1,0 +1,29 @@
+# PyTorch: install separately for your CUDA version, e.g.
+#   pip install torch==2.11.0 torchvision==0.26.0 --index-url https://download.pytorch.org/whl/cu128
+numpy==2.5.2
+opencv-python-headless==5.0.0.93
+pillow==12.3.0
+einops==0.8.2
+safetensors==0.8.0
+transformers==5.16.1
+accelerate==1.14.0
+peft==0.20.0
+modelscope==1.39.1
+ftfy==6.3.1
+pandas==3.0.5
+imageio==2.37.4
+imageio-ffmpeg==0.6.0
+scipy==1.18.1
+tqdm==4.70.0
+
+# training
+deepspeed==0.19.6
+tensorboard==2.21.0
+pytest==9.1.1
+
+# evaluation
+lpips==0.1.4
+av==18.1.0
+
+# DiffSynth-Studio is installed from source at the pinned commit; see README.
+# diffsynth==2.1.6

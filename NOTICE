@@ -1,0 +1,27 @@
+MaLiang
+Copyright 2026 The MaLiang Authors
+
+This product includes software, model weights, and evaluation assets from
+third parties. Their licenses are retained by their respective owners:
+
+- Wan2.2-TI2V-5B (Wan-AI), Apache License 2.0.
+  https://github.com/Wan-Video/Wan2.2
+- DiffSynth-Studio (ModelScope), Apache License 2.0.
+  https://github.com/modelscope/DiffSynth-Studio
+- LPIPS (Richard Zhang et al.), BSD-2-Clause.
+  https://github.com/richzhang/PerceptualSimilarity
+- SegFormer (NVlabs), Apache License 2.0. The released SegFormer-B2
+  segmenter was fine-tuned on the project's recorded RGB / integer-map pairs.
+  https://github.com/NVlabs/SegFormer
+- TAEHV (Ollin), MIT License.
+  https://github.com/madebyollin/taehv
+- I3D feature extractor used for FVD, from the StyleGAN-V / i3d-torchscript
+  lineage. See the upstream repository for its license.
+  https://github.com/universome/stylegan-v
+
+ARoPE modules under code/arope are part of the authors' own research
+codebase and are covered by the Apache-2.0 license of this repository.
+
+The checkpoints are released for research use. The game recordings
+and the Wan2.2 base model are not redistributed here; obtain them under their
+own terms.

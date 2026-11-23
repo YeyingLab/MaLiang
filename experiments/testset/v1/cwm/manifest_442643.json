@@ -1,0 +1,622 @@
+{
+ "clips": [
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002208",
+   "scale_median": 2.412694146362771,
+   "scale_cv": 0.20103191453570027,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000000",
+   "scale_median": 3.5045569843527873,
+   "scale_cv": 0.21996632032615182,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002304",
+   "scale_median": 2.179340102980651,
+   "scale_cv": 0.08277851880295946,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000000",
+   "scale_median": 2.4117358058543426,
+   "scale_cv": 0.05799289875353387,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002208",
+   "scale_median": 9.889273577898905,
+   "scale_cv": 0.19574297369654844,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000000",
+   "scale_median": 6.2421243983774195,
+   "scale_cv": 0.15311258803565322,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002304",
+   "scale_median": 11.996016333090028,
+   "scale_cv": 0.0730199475719787,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000000",
+   "scale_median": 7.590644840401691,
+   "scale_cv": 0.2756594188646804,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002304",
+   "scale_median": 7.42732488500067,
+   "scale_cv": 0.012808435755974845,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000096",
+   "scale_median": 3.409437820060413,
+   "scale_cv": 0.1763628677415703,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002112",
+   "scale_median": 3.51152370313503,
+   "scale_cv": 0.17136914663201613,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000096",
+   "scale_median": 3.6624463991679868,
+   "scale_cv": 0.1832502413524739,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002208",
+   "scale_median": 2.138157652681732,
+   "scale_cv": 0.18842212307056996,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000096",
+   "scale_median": 2.3965413554832806,
+   "scale_cv": 0.1217337658100794,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002400",
+   "scale_median": 8.204469095703658,
+   "scale_cv": 0.23816742608665675,
+   "frames_without_ground": 9
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000096",
+   "scale_median": 6.072078305721338,
+   "scale_cv": 0.1651793530499514,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002400",
+   "scale_median": 12.29795220984196,
+   "scale_cv": 0.053437587950163574,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000096",
+   "scale_median": 7.487523841679757,
+   "scale_cv": 0.24581611287933594,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002400",
+   "scale_median": 7.281962754809611,
+   "scale_cv": 0.18163942729203075,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000192",
+   "scale_median": 3.2894916609235065,
+   "scale_cv": 0.2343260431692642,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002400",
+   "scale_median": 2.6050479881825943,
+   "scale_cv": 0.14642199885677862,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000192",
+   "scale_median": 3.3669374546888635,
+   "scale_cv": 0.32230354948057105,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002400",
+   "scale_median": 2.329971213029316,
+   "scale_cv": 0.16623016371294652,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000192",
+   "scale_median": 2.204962979991168,
+   "scale_cv": 0.0887600074664366,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002112",
+   "scale_median": 10.848979266294736,
+   "scale_cv": 0.15165863171974228,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000192",
+   "scale_median": 5.249707622498878,
+   "scale_cv": 0.18344022039223154,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002208",
+   "scale_median": 7.244912556737395,
+   "scale_cv": 0.18562258365390621,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000192",
+   "scale_median": 7.3496199282121175,
+   "scale_cv": 0.2070984146207919,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002208",
+   "scale_median": 7.354044161257322,
+   "scale_cv": 0.13028651223738455,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000288",
+   "scale_median": 5.052476268816665,
+   "scale_cv": 0.06650791062131939,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002016",
+   "scale_median": 2.672305151099748,
+   "scale_cv": 0.2566589860613952,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000384",
+   "scale_median": 1.8892589826969846,
+   "scale_cv": 0.23704374900250258,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002112",
+   "scale_median": 2.0494509424479914,
+   "scale_cv": 0.13985736979050267,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000288",
+   "scale_median": 1.935882756226322,
+   "scale_cv": 0.05123992450261398,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002496",
+   "scale_median": 4.5582805293963125,
+   "scale_cv": 0.21691982378746308,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000288",
+   "scale_median": 4.0762062599195525,
+   "scale_cv": 0.16295231447961855,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002592",
+   "scale_median": 10.181198047558821,
+   "scale_cv": 0.21083774995967194,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000288",
+   "scale_median": 4.423097410322248,
+   "scale_cv": 0.3151145396974774,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002496",
+   "scale_median": 6.4314977836548275,
+   "scale_cv": 0.019062669731344215,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000384",
+   "scale_median": 3.5952381630424677,
+   "scale_cv": 0.18476615561915644,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002496",
+   "scale_median": 2.716256524392485,
+   "scale_cv": 0.06176597990110677,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000480",
+   "scale_median": 1.8429412223664097,
+   "scale_cv": 0.24367665381461348,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002496",
+   "scale_median": 2.1355486988386168,
+   "scale_cv": 0.27557703999888755,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000384",
+   "scale_median": 2.323450030602393,
+   "scale_cv": 0.04215693858510073,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002016",
+   "scale_median": 8.618056131075205,
+   "scale_cv": 0.17065005837086913,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000384",
+   "scale_median": 6.218471791043678,
+   "scale_cv": 0.15647806762915528,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002112",
+   "scale_median": 11.169311433596683,
+   "scale_cv": 0.1569130939477814,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000480",
+   "scale_median": 6.697819932901693,
+   "scale_cv": 0.29241314071776686,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002112",
+   "scale_median": 6.414207525652758,
+   "scale_cv": 0.180161177412409,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000480",
+   "scale_median": 3.5553362473140986,
+   "scale_cv": 0.3704775698042974,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001824",
+   "scale_median": 2.876893443289124,
+   "scale_cv": 0.31088808227898707,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000576",
+   "scale_median": 1.8135640361417573,
+   "scale_cv": 0.11965454600316143,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002016",
+   "scale_median": 2.058290147217132,
+   "scale_cv": 0.15449078649287923,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000576",
+   "scale_median": 1.7674288709976649,
+   "scale_cv": 0.197749023315315,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002592",
+   "scale_median": 8.56468486385521,
+   "scale_cv": 0.1882777794014823,
+   "frames_without_ground": 25
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000480",
+   "scale_median": 4.851359701250944,
+   "scale_cv": 0.27571408126384755,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002688",
+   "scale_median": 10.059522847493724,
+   "scale_cv": 0.10092223929414722,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000576",
+   "scale_median": 8.221902442810624,
+   "scale_cv": 0.21428153589256382,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002592",
+   "scale_median": 6.152161406244017,
+   "scale_cv": 0.05836542221496014,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000576",
+   "scale_median": 3.128251097321127,
+   "scale_cv": 0.1737750544820271,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002592",
+   "scale_median": 2.4191965495441314,
+   "scale_cv": 0.08107848612975246,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000672",
+   "scale_median": 1.6745944855653516,
+   "scale_cv": 0.2164137079221254,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002592",
+   "scale_median": 2.379790612970618,
+   "scale_cv": 0.22296443788125558,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000672",
+   "scale_median": 1.859100464958091,
+   "scale_cv": 0.16891896136280773,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001920",
+   "scale_median": 9.131857275557174,
+   "scale_cv": 0.21157468135372612,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000576",
+   "scale_median": 4.080523209237954,
+   "scale_cv": 0.11947172369295536,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002016",
+   "scale_median": 10.38745051921071,
+   "scale_cv": 0.1336243110109261,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000672",
+   "scale_median": 3.580594407182527,
+   "scale_cv": 0.32420438236644306,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002016",
+   "scale_median": 4.846018941115559,
+   "scale_cv": 0.20210224812175598,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000672",
+   "scale_median": 3.3699212134616996,
+   "scale_cv": 0.24349163525354564,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001728",
+   "scale_median": 2.809537533797655,
+   "scale_cv": 0.13334242168215524,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000768",
+   "scale_median": 2.313275273053188,
+   "scale_cv": 0.20602930694840188,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__001920",
+   "scale_median": 1.9508644343301826,
+   "scale_cv": 0.05567590470683353,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000768",
+   "scale_median": 1.7255293530212097,
+   "scale_cv": 0.09847870297516846,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002688",
+   "scale_median": 10.206026287292627,
+   "scale_cv": 0.12775992371382544,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000768",
+   "scale_median": 10.861625281533676,
+   "scale_cv": 0.21536910011922264,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002784",
+   "scale_median": 8.556014551974126,
+   "scale_cv": 0.1264410975480441,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000768",
+   "scale_median": 5.970580188630345,
+   "scale_cv": 0.37618334741060594,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002688",
+   "scale_median": 6.955372803404433,
+   "scale_cv": 0.09307563031177152,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000768",
+   "scale_median": 3.48803993445344,
+   "scale_cv": 0.1927628953629851,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__002688",
+   "scale_median": 2.6755479405227067,
+   "scale_cv": 0.30982254648964064,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000864",
+   "scale_median": 1.602201104413219,
+   "scale_cv": 0.22104088310152117,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__002688",
+   "scale_median": 2.1055478182974907,
+   "scale_cv": 0.09020940531181178,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000864",
+   "scale_median": 1.537815660751706,
+   "scale_cv": 0.22696114675892798,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001824",
+   "scale_median": 6.867111293329533,
+   "scale_cv": 0.31393281505155274,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000864",
+   "scale_median": 13.111709131139492,
+   "scale_cv": 0.03736633379729963,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__001824",
+   "scale_median": 12.061172564271597,
+   "scale_cv": 0.04318263489835886,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000864",
+   "scale_median": 7.820094396668441,
+   "scale_cv": 0.2978347899216402,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__001920",
+   "scale_median": 5.5552456784975615,
+   "scale_cv": 0.32450863335408925,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000864",
+   "scale_median": 2.7914353939990337,
+   "scale_cv": 0.09876029164892697,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "03_Desert_Caravanserai__R10_s3512__001632",
+   "scale_median": 3.6123987994960998,
+   "scale_cv": 0.2177911406508128,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "05_Japanese_Spring_Sanctuary__R10_s5512__000960",
+   "scale_median": 2.131672558278661,
+   "scale_cv": 0.18307728306253981,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "07_Steampunk_Foundry_District__R10_s7511__001728",
+   "scale_median": 6.0441686076826056,
+   "scale_cv": 0.1100675809088976,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000960",
+   "scale_median": 1.6381540813469684,
+   "scale_cv": 0.12354489297608676,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002784",
+   "scale_median": 7.035990485728009,
+   "scale_cv": 0.19683478309146946,
+   "frames_without_ground": 22
+  },
+  {
+   "clip_id": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000960",
+   "scale_median": 10.866728780937972,
+   "scale_cv": 0.3070282740306883,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "10_Underwater_Research_Habitat__P9C_snow_s10945__002976",
+   "scale_median": 10.274430179521067,
+   "scale_cv": 0.19872056945286531,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000960",
+   "scale_median": 6.656508153694114,
+   "scale_cv": 0.32609651384449506,
+   "frames_without_ground": 0
+  },
+  {
+   "clip_id": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002784",
+   "scale_median": 6.782225548682166,
+   "scale_cv": 0.1377180230254951,
+   "frames_without_ground": 0
+  }
+ ],
+ "depth_model": "depth-anything/Depth-Anything-V2-Metric-Outdoor-Large-hf",
+ "frames": 124,
+ "fps": 24,
+ "semantic_lut": {
+  "0": 1,
+  "1": 3,
+  "2": 4,
+  "3": 6,
+  "4": 3,
+  "5": 5,
+  "6": 11,
+  "10": 8,
+  "11": 9,
+  "12": 8,
+  "13": 8,
+  "14": 8,
+  "15": 8,
+  "16": 8,
+  "17": 9,
+  "18": 9,
+  "19": 9,
+  "20": 9,
+  "21": 9
+ }
+}

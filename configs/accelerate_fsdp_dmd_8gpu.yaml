@@ -1,0 +1,49 @@
+# 蒸馏 stage3 的 FSDP 配置（num_processes 见下）。
+# ⚠️ 共用机器，4-7 默认不归我们；用它前先确认没人要用（common.sh 需要 DISTILL_NGPU=8）。
+# 蒸馏 stage3（on-policy DMD）专用：FSDP1 FULL_SHARD，bf16。
+# 派生自 _wm/an earlier internal project/distill/code/common/accelerate_fsdp_dmd.yaml（那份是 num_processes: 3，被 run.sh 的
+# --num_processes 覆盖；这里直接写死 4）。stage1/2 用 ZeRO-2，只有 stage3 有两个可训模型（student + critic），
+# 而 accelerate 的 DeepSpeed 分支只保留传给 prepare 的最后一个 nn.Module（accelerator.py:2229-2236），故必须换 FSDP。
+#
+# fsdp_version: 1 —— 显式选 FSDP1；accelerate 1.14 的 v1 分支读 fsdp_reshard_after_forward（utils/dataclasses.py:1848），
+#   fsdp_sharding_strategy 是已废弃的旧拼写（:1836）。FULL_SHARD ⇒ 参数/梯度/优化器状态全切 4 份。
+# fsdp_use_orig_params: true —— 【风险 5，致命】两处吃紧：优化器在 prepare 之前按 model.parameters() 建好且此后不再重映射，
+#   若为 false，FSDP1 换上 FlatParameter，优化器 step 的是过期张量、永远收不到梯度 —— 模型静默地完全不学习，无报错；
+#   同时 zip-EMA 也要求 Parameter 的身份/顺序/分片完全一致。启动时断言
+#   accelerator.state.fsdp_plugin.use_orig_params 为真、开跑前 probe_student_grad 量一次梯度可达性；
+#   并且（已实现，S3-GUARD-3）dmd_arope.py 在每个生成器步的 opt_g.step() 之前检查 gnorm_g：
+#   step > resume_step 后恰为 0.0 或 NaN 直接 SystemExit（inf 不拦，clip 已归零；step 0 的 dmd 梯度
+#   恰为 0 是配方性质、由 probe 覆盖、不拦）。
+# fsdp_sync_module_states: false + fsdp_cpu_ram_efficient_loading: false —— 每个 rank 自己确定性地读同一份 safetensors，
+#   不需要 rank0 广播；开了 sync 会让 rank0 一次性实体化全部模型，prepare 阶段直接 OOM。
+# fsdp_state_dict_type: SHARDED_STATE_DICT —— 存 optimizer state 用分片；导权重走 accelerator.get_state_dict + safetensors。
+# fsdp_activation_checkpointing: false —— 梯度检查点在模型侧按路径开（student 只在并行路径上开、critic 必须开），
+#   不交给 FSDP 全局包，否则 rollout 的单帧图也会被包进去。
+compute_environment: LOCAL_MACHINE
+debug: false
+distributed_type: FSDP
+downcast_bf16: 'no'
+enable_cpu_affinity: false
+fsdp_config:
+  fsdp_version: 1
+  fsdp_reshard_after_forward: FULL_SHARD
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_transformer_layer_cls_to_wrap: DiTBlock
+  fsdp_backward_prefetch: BACKWARD_PRE
+  fsdp_state_dict_type: SHARDED_STATE_DICT
+  fsdp_offload_params: false
+  fsdp_use_orig_params: true
+  fsdp_sync_module_states: false
+  fsdp_cpu_ram_efficient_loading: false
+  fsdp_activation_checkpointing: false
+machine_rank: 0
+main_training_function: main
+mixed_precision: bf16
+num_machines: 1
+num_processes: 8
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false

@@ -1,0 +1,26 @@
+# DeepSpeed ZeRO-2，bf16，无 offload，梯度裁剪 1.0，梯度累积 1。
+# train_micro_batch_size_per_gpu 由 accelerate 填 "auto" ⇒ 取 train.py 里 DataLoader 的 batch_size（默认 1）。
+# 不用 deepspeed_config_file：accelerate 1.14 里它与 mixed_precision 等键互斥，yaml 原生字段更省事。
+compute_environment: LOCAL_MACHINE
+debug: false
+deepspeed_config:
+  gradient_accumulation_steps: 1
+  gradient_clipping: 1.0
+  offload_optimizer_device: none
+  offload_param_device: none
+  zero3_init_flag: false
+  zero_stage: 2
+distributed_type: DEEPSPEED
+downcast_bf16: 'no'
+enable_cpu_affinity: false
+machine_rank: 0
+main_training_function: main
+mixed_precision: bf16
+num_machines: 1
+num_processes: 8
+rdzv_backend: static
+same_network: true
+tpu_env: []
+tpu_use_cluster: false
+tpu_use_sudo: false
+use_cpu: false

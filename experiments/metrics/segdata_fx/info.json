@@ -1,0 +1,77 @@
+{
+ "relabelled": 9600,
+ "fx_clips_total": 110,
+ "fx_clips_used": 1500,
+ "fx_frames_added": 5698,
+ "fx_runs": 110,
+ "held_fx_runs": [
+  [
+   "v10_real",
+   "01_Sunlit_Mediterranean_Courtyard",
+   "R10_s1502"
+  ],
+  [
+   "v10_real",
+   "02_Autumn_Woodland_Shrine",
+   "R10_s2509"
+  ],
+  [
+   "v10_real",
+   "02_Autumn_Woodland_Shrine",
+   "R10_s2510"
+  ],
+  [
+   "v10_real",
+   "04_Snowbound_Mountain_Outpost",
+   "R10_s4506"
+  ],
+  [
+   "v10_real",
+   "04_Snowbound_Mountain_Outpost",
+   "R10_s4511"
+  ],
+  [
+   "v10_real",
+   "05_Japanese_Spring_Sanctuary",
+   "R10_s5511"
+  ],
+  [
+   "v10_real",
+   "07_Steampunk_Foundry_District",
+   "R10_s7504"
+  ],
+  [
+   "v10_real",
+   "07_Steampunk_Foundry_District",
+   "R10_s7505"
+  ],
+  [
+   "v10_real",
+   "08_Gothic_Cathedral_Quarter",
+   "R10_s8504"
+  ],
+  [
+   "v10_real",
+   "08_Gothic_Cathedral_Quarter",
+   "R10_s8506"
+  ],
+  [
+   "v10_real",
+   "10_Underwater_Research_Habitat",
+   "R10_s10510"
+  ]
+ ],
+ "moved_to_val": 372,
+ "classes": [
+  "sky",
+  "terrain",
+  "paving",
+  "architecture",
+  "rock",
+  "vegetation",
+  "prop",
+  "player",
+  "boss",
+  "fx"
+ ]
+}

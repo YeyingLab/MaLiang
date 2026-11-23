@@ -1,0 +1,684 @@
+{
+ "clips": [
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000000",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002208",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000000",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002304",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000000",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002208",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000000",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002304",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000000",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002304",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000096",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002112",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000096",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002208",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000096",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002400",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000096",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002400",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000096",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002400",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000192",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002400",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000192",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002400",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000192",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002112",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000192",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002208",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000192",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002208",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000288",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002016",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000384",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002112",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000288",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002496",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000288",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002592",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000288",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002496",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000384",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002496",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000480",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002496",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000384",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002016",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000384",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002112",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000480",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002112",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000480",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__001824",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000576",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002016",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000576",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002592",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000480",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002688",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000576",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002592",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000576",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002592",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000672",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002592",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000672",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001920",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000576",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002016",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000672",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002016",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000672",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__001728",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000768",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__001920",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000768",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002688",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000768",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002784",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000768",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002688",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000768",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__002688",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000864",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__002688",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000864",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__001824",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000864",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__001824",
+   "colors": [
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000864",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__001920",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "01_Sunlit_Mediterranean_Courtyard__R10_s1512__000864",
+   "colors": [
+    "blue"
+   ]
+  },
+  {
+   "name": "03_Desert_Caravanserai__R10_s3512__001632",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "05_Japanese_Spring_Sanctuary__R10_s5512__000960",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "07_Steampunk_Foundry_District__R10_s7511__001728",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "09_Dense_Cyberpunk_Neon_District__R10_s9511__000960",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "08_Gothic_Cathedral_Quarter__P9C_default_s8946__002784",
+   "colors": []
+  },
+  {
+   "name": "06_Overgrown_Tropical_Water_Temple__P9C_golden_s6946__000960",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "10_Underwater_Research_Habitat__P9C_snow_s10945__002976",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "04_Snowbound_Mountain_Outpost__P9_autumn_s4908__000960",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  },
+  {
+   "name": "02_Autumn_Woodland_Shrine__P9_golden_s2909__002784",
+   "colors": [
+    "blue",
+    "red"
+   ]
+  }
+ ],
+ "frames": 158,
+ "fps": 24,
+ "proxy_colors": {
+  "blue": [
+   40,
+   90,
+   255
+  ],
+  "red": [
+   235,
+   40,
+   40
+  ],
+  "yellow": [
+   250,
+   220,
+   30
+  ]
+ },
+ "rule": "whitebox + flat proxy colours from ids"
+}

@@ -1,0 +1,13 @@
+{
+ "shape": "cylinder",
+ "setting": "a stylised painterly 2.5D action role-playing game arena in a underwater research habitat, seen from a fixed high camera at about 45 degrees: open walkable ground with paved paths, buildings and walls, rocks, trees and plants, crates and barrels, under consistent soft daylight",
+ "subjects": [
+  {
+   "color": "red",
+   "desc": "a large boss monster fighting the player, much bigger than the player, swinging a heavy weapon",
+   "many": false,
+   "motion": "moving and attacking as recorded"
+  }
+ ],
+ "sound": "footsteps, weapon swings and impacts, ambient wind"
+}

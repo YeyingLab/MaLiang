@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MaLiang: Painting Playable Game Worlds from Numbers</title>
+<style>
+@font-face { font-family: "Lato"; font-weight: 300; src: url("assets/fonts/lato-light.woff") format("woff"); }
+@font-face { font-family: "Lato"; font-weight: 400; src: url("assets/fonts/lato-regular.woff") format("woff"); }
+@font-face { font-family: "Lato"; font-weight: 700; src: url("assets/fonts/lato-bold.woff") format("woff"); }
+@font-face { font-family: "Lato"; font-weight: 900; src: url("assets/fonts/lato-black.woff") format("woff"); }
+:root {
+  --paper: #f1f4f7; --white: #ffffff; --ink: #0b1322; --ink2: #3a4658; --mute: #6b778a; --line: #dbe2ea;
+  --night: #0a1424; --night2: #101c30; --nline: #1f2c42; --ntxt: #f4f7fb; --nmute: #9aa7b7;
+  --blue: #2f6fe4; --amber: #f5a524; --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 17px/1.65 "Lato", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif; }
+a { color: var(--blue); text-decoration: none; }
+img, video { display: block; max-width: 100%; }
+.skip { position: absolute; left: -999px; } .skip:focus { left: 12px; top: 12px; z-index: 99; background: #fff; padding: 6px 10px; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+.bar { position: fixed; inset: 0 0 auto 0; z-index: 30; height: 60px; display: flex; align-items: center; justify-content: space-between; padding: 0 28px;
+       background: rgba(10,20,36,.94); backdrop-filter: blur(8px); border-bottom: 1px solid rgba(255,255,255,.06); }
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 900; font-size: 19px; color: #fff; }
+.brand img { width: 32px; height: 32px; object-fit: contain; }
+.bar nav { display: flex; gap: 28px; font: 600 12px/1 var(--mono); letter-spacing: 1.6px; text-transform: uppercase; }
+.bar nav a { color: #9aa7b7; padding: 6px 0; border-bottom: 2px solid transparent; } .bar nav a:hover, .bar nav a.on { color: #fff; border-color: var(--amber); }
+.bar .badge { font: 12px/1 var(--mono); letter-spacing: 1px; color: #cfd8e3; border: 1px solid #2a3a55; padding: 8px 10px; border-radius: 6px; }
+.hero { position: relative; min-height: 100vh; background: var(--night); color: #fff; display: grid; place-items: center; overflow: hidden; }
+.hero video.bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .9; }
+.hero::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 58% 68% at 50% 52%, rgba(10,20,36,.84) 0%, rgba(10,20,36,.55) 62%, rgba(10,20,36,.3) 100%); }
+.hero .in { position: relative; z-index: 2; text-align: center; padding: 110px 24px 70px; max-width: 1040px; }
+.pill { display: inline-block; font: 700 12px/1 var(--mono); letter-spacing: 2.2px; text-transform: uppercase; color: #cfd8e3;
+        border: 1px solid #33465f; background: rgba(16,28,48,.75); padding: 9px 12px; border-radius: 6px; }
+.hero .mascot { width: 140px; margin: 22px auto -8px; filter: drop-shadow(0 12px 24px rgba(0,0,0,.55)); }
+.hero h1 { font-weight: 900; font-size: clamp(66px, 11vw, 156px); line-height: .95; margin: 12px 0 8px; letter-spacing: -2px; text-shadow: 0 6px 30px rgba(0,0,0,.5); }
+.hero h2 { font-weight: 700; font-size: clamp(24px, 3.2vw, 42px); line-height: 1.2; margin: 4px 0 20px; text-shadow: 0 4px 20px rgba(0,0,0,.5); }
+.hero .anon a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.hero .anon { color: #cfd8e3; margin: 0 0 22px; }
+.hero .lede { font-size: 21px; color: #eef2f7; max-width: 820px; margin: 0 auto 8px; text-shadow: 0 2px 12px rgba(0,0,0,.6); }
+.hero .lede2 { color: #b9c4d2; margin: 0 0 30px; }
+.btns { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 999px; border: 1px solid #33465f; background: rgba(16,28,48,.85);
+       color: #fff; font-weight: 700; font-size: 15px; cursor: pointer; font-family: inherit; } .btn:hover { border-color: var(--amber); }
+.btn.primary { background: var(--amber); color: #1b1300; border-color: var(--amber); }
+section { padding: 110px 0 90px; }
+section.night { background: var(--night); color: var(--ntxt); }
+.eyebrow { font: 700 12.5px/1 var(--mono); letter-spacing: 2.4px; color: var(--blue); text-transform: uppercase; margin-bottom: 14px; }
+.night .eyebrow, .panel .eyebrow { color: var(--amber); }
+h3.title { font-weight: 900; font-size: clamp(44px, 6vw, 72px); line-height: 1.02; margin: 0 0 10px; letter-spacing: -1.5px; }
+.sub { font-weight: 700; font-size: clamp(22px, 2.4vw, 30px); line-height: 1.25; margin: 0 0 14px; }
+.lead { font-size: 18.5px; color: var(--ink2); max-width: 880px; margin: 0; }
+.night .lead { color: var(--nmute); }
+.abs { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+.abs p { font-size: 18.5px; color: var(--ink2); margin: 0; }
+.kpis { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 44px; }
+.card { background: var(--white); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; box-shadow: 0 1px 2px rgba(11,19,34,.04); }
+.night .card { background: var(--night2); border-color: var(--nline); box-shadow: none; }
+.kpi b { display: block; font: 900 40px/1.05 "Lato"; color: var(--ink); letter-spacing: -.5px; }
+.kpi span { color: var(--mute); font-size: 15px; }
+.cards3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 28px; }
+.cmp .sym { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font: 900 22px/1 "Lato"; background: #eef2f7; color: var(--ink2); margin-bottom: 14px; }
+.cmp .lab { font: 700 12px/1 var(--mono); letter-spacing: 1.6px; color: var(--mute); text-transform: uppercase; margin-bottom: 8px; }
+.cmp h4 { margin: 0 0 8px; font-size: 21px; line-height: 1.3; }
+.cmp p { margin: 0; color: var(--mute); font-size: 15.5px; }
+.cmp.ours { border-color: rgba(47,111,228,.45); background: linear-gradient(180deg, #f2f6ff, #fff); }
+.cmp.ours .sym { background: var(--blue); color: #fff; }
+.cmp .x { font-weight: 700; display: block; margin-top: 8px; } .cmp .x.bad { color: #c2410c; } .cmp .x.good { color: #15803d; }
+.fig { margin-top: 30px; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: #000; }
+.cap { color: var(--mute); font-size: 14.5px; margin-top: 12px; }
+.night .cap { color: var(--nmute); }
+.reveal { position: relative; cursor: ew-resize; user-select: none; }
+.reveal video { width: 100%; }
+.reveal .top { position: absolute; inset: 0; clip-path: inset(0 0 0 var(--x, 50%)); }
+.reveal .handle { position: absolute; top: 0; bottom: 0; left: var(--x, 50%); width: 2px; background: #fff; box-shadow: 0 0 14px rgba(0,0,0,.6); pointer-events: none; }
+.reveal .handle::after { content: "⇆"; position: absolute; top: 50%; left: -20px; width: 40px; height: 40px; margin-top: -20px; border-radius: 50%; background: #fff; color: #000;
+                         display: grid; place-items: center; font-weight: 900; box-shadow: 0 4px 16px rgba(0,0,0,.4); }
+.reveal .tg { position: absolute; top: 16px; font: 700 12px/1 var(--mono); letter-spacing: 1px; background: rgba(10,20,36,.82); padding: 8px 11px; border-radius: 6px; color: #fff; }
+.layers { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 36px; }
+.layer { position: relative; }
+.layer .lid { font: 900 30px/1 "Lato"; color: var(--amber); }
+.layer .what { position: absolute; top: 22px; right: 22px; font: 700 10.5px/1.3 var(--mono); letter-spacing: 1.2px; color: var(--nmute); text-transform: uppercase; text-align: right; max-width: 110px; }
+.layer h4 { margin: 14px 0 8px; font-size: 24px; }
+.layer p { margin: 0 0 12px; color: var(--nmute); font: 14px/1.55 var(--mono); }
+.layer ul { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--nline); }
+.layer li { padding: 8px 0; border-bottom: 1px solid var(--nline); font: 13.5px/1.4 var(--mono); color: #d7dfea; }
+.layer li::before { content: "•"; color: var(--amber); margin-right: 8px; }
+.loopnote { display: flex; align-items: center; gap: 12px; margin: 20px 0 0; color: var(--nmute); font-size: 15px; }
+.loopnote b { color: #fff; }
+.frame { margin-top: 34px; background: #fff; border-radius: 18px; padding: 18px; }
+.frame svg { width: 100%; height: auto; display: block; }
+.panel { background: var(--night); color: #fff; border-radius: 20px; padding: 30px 32px; margin-top: 30px; }
+.panel h4 { font: 900 34px/1.15 "Lato"; margin: 4px 0 22px; letter-spacing: -.5px; }
+.panel .nums { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--nline); border-bottom: 1px solid var(--nline); }
+.panel .nums div { padding: 22px 0; } .panel .nums div + div { border-left: 1px solid var(--nline); padding-left: 26px; }
+.panel .nums b { font: 900 56px/1 "Lato"; color: #a7f3d0; letter-spacing: -1px; } .panel .nums b small { font-size: 22px; color: var(--nmute); font-weight: 700; }
+.panel .nums span { display: block; color: var(--nmute); font-size: 14.5px; margin-top: 8px; }
+.panel .cap { color: var(--nmute); }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.panel table { margin-top: 10px; }
+th, td { padding: 13px 12px; border-bottom: 1px solid var(--nline); text-align: right; white-space: nowrap; }
+th { font: 700 11.5px/1.2 var(--mono); letter-spacing: 1px; color: var(--nmute); text-transform: uppercase; }
+th:first-child, td:first-child, .l { text-align: left; }
+td.l { color: var(--nmute); }
+tr.ours td { color: var(--amber); font-weight: 700; } tr.ours td.l { color: var(--amber); font-weight: 400; }
+tr.ours td:first-child::before { content: "●"; margin-right: 8px; font-size: 11px; }
+.gal { margin-top: 70px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 14px; }
+.tabs button { font: 700 14px/1 "Lato"; color: var(--ink2); background: var(--white); border: 1px solid var(--line); border-radius: 999px; padding: 11px 18px; cursor: pointer; }
+.tabs button.on, .tabs button:hover { color: #fff; background: var(--ink); border-color: var(--ink); }
+.tabnote { color: var(--mute); margin: 0 0 18px; font-size: 15.5px; min-height: 1.5em; }
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.tile { position: relative; border-radius: 14px; overflow: hidden; background: #000; cursor: pointer; box-shadow: 0 6px 18px rgba(11,19,34,.10); }
+.tile video { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+.tile .m { position: absolute; inset: 0; opacity: 0; transition: opacity .18s; }
+.tile:hover .m, .tile.show .m { opacity: 1; }
+.tile .lbl { position: absolute; left: 10px; bottom: 10px; right: 10px; display: flex; justify-content: space-between; gap: 8px; pointer-events: none; }
+.tile .lbl span { font: 700 12.5px/1.2 "Lato"; background: rgba(10,20,36,.8); color: #fff; padding: 6px 9px; border-radius: 6px; }
+.tile .lbl .k { font: 700 10.5px/1.2 var(--mono); color: #7dd3fc; }
+.samemap { margin-top: 70px; display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 36px; align-items: center; }
+.limits { margin-top: 56px; }
+.limits ul { margin: 10px 0 0; padding-left: 20px; color: var(--ink2); } .limits li { margin-bottom: 8px; }
+.ds { display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; align-items: start; margin-top: 10px; }
+.stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 26px; }
+.stat b { display: block; font: 900 44px/1.05 "Lato"; color: #a7f3d0; letter-spacing: -.5px; }
+.stat span { font: 12px/1.4 var(--mono); letter-spacing: 1px; color: var(--nmute); text-transform: uppercase; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.chips span { font: 13px/1 var(--mono); color: #d7dfea; border: 1px solid var(--nline); background: var(--night2); padding: 8px 10px; border-radius: 6px; }
+.dsfig { background: #fff; border-radius: 18px; padding: 18px; color: var(--ink); }
+.dsfig svg { width: 100%; height: auto; display: block; }
+.rollout { margin-top: 30px; border-radius: 18px; overflow: hidden; border: 1px solid var(--nline); background: #000; }
+.rmeta { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 14px; font: 13px/1.4 var(--mono); color: var(--nmute); }
+.vid { margin-top: 30px; border-radius: 18px; overflow: hidden; background: #000; box-shadow: 0 18px 50px rgba(11,19,34,.18); }
+.modal { position: fixed; inset: 0; z-index: 50; background: rgba(5,10,18,.88); display: none; place-items: center; padding: 40px; }
+.modal.on { display: grid; }
+.modal video { width: min(1280px, 92vw); border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.modal button { position: absolute; top: 22px; right: 26px; font: 700 26px/1 "Lato"; color: #fff; background: none; border: 0; cursor: pointer; }
+footer { background: var(--night); color: #9aa7b7; padding: 34px 0 50px; font: 13px/1.6 var(--mono); }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+footer a { color: var(--amber); }
+@media (max-width: 960px) { .abs, .ds, .samemap { grid-template-columns: 1fr; } .kpis, .cards3, .layers, .grid { grid-template-columns: 1fr 1fr; } .bar nav { display: none; } }
+@media (max-width: 620px) { .kpis, .cards3, .layers, .grid, .panel .nums { grid-template-columns: 1fr; } }
+
+.fig img { width: 100%; display: block; background: #fff; }
+.fig.white { background: #fff; padding: 14px; }
+.mgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 30px; }
+.pair { background: var(--white); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; box-shadow: 0 6px 18px rgba(11,19,34,.07); }
+.pair .vv { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; background: #000; }
+.pair video { width: 100%; aspect-ratio: 832/480; object-fit: cover; }
+.pair .cap2 { display: flex; justify-content: space-between; padding: 9px 12px; font: 13px/1.3 var(--mono); color: var(--mute); }
+.pair .cap2 b { color: var(--ink); font: 700 14px/1.3 "Lato"; }
+.styles4 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 26px; }
+.styles4 .cell { border-radius: 12px; overflow: hidden; background: #000; position: relative; }
+.styles4 video { width: 100%; aspect-ratio: 832/480; object-fit: cover; }
+.styles4 .t { position: absolute; left: 8px; top: 8px; font: 700 12px/1 var(--mono); background: rgba(10,20,36,.8); color: #fff; padding: 6px 8px; border-radius: 6px; }
+.hero video.bg { opacity: .95; }
+.ds { display: block !important; }
+.stats { grid-template-columns: repeat(4, 1fr) !important; }
+@media (max-width: 960px) { .stats { grid-template-columns: 1fr 1fr !important; } }
+</style></head>
+<body>
+<a class="skip" href="#abstract">Skip to content</a>
+<div class="bar">
+  <a class="brand" href="#top"><img src="assets/img/mascot.png" alt="">MaLiang</a>
+  <nav id="nav"><a href="#abstract">Abstract</a><a href="#overview">Overview</a><a href="#architecture">Architecture</a><a href="#examples">Examples</a><a href="#results">Results</a><a href="#dataset">Dataset</a><a href="#rollout">Walkthrough</a><a href="#video">Video</a></nav>
+  <a class="badge" href="https://github.com/YeyingLab/MaLiang" style="text-decoration:none">GitHub</a>
+</div>
+<header class="hero" id="top">
+  <video class="bg" src="assets/hero_wall.mp4" muted loop autoplay playsinline preload="auto" aria-hidden="true"></video>
+  <div class="in">
+    <img class="mascot" src="assets/img/mascot.png" alt="MaLiang mascot">
+    <h1>MaLiang</h1>
+    <h2>Painting Playable Game Worlds from Numbers</h2>
+    <p class="anon authors"><a href="https://teawhite.cn/">Zhiyang Deng</a><sup>1,2,*</sup> · <a href="https://github.com/sylvana20">Shushan Xu</a><sup>1,3,*</sup> · <a href="https://github.com/jinyeying">Yeying Jin</a><sup>1,2,♢</sup><br><small><sup>1</sup>Tencent · <sup>2</sup>National University of Singapore · <sup>3</sup>Nanyang Technological University<br><sup>*</sup>Equal contribution · <sup>♢</sup>Corresponding author and project leader</small></p>
+    <p class="lede">A game hands a video model one integer per pixel. The model paints the world, live.</p>
+    <p class="lede2">Write it into the map. See it in the next step. Play.</p>
+    <div class="btns"><button class="btn primary" id="playVideo">▶ Watch the video</button><a class="btn" href="#" data-todo="arxiv">arXiv</a><a class="btn" href="https://github.com/YeyingLab/MaLiang">Code</a><a class="btn" href="https://huggingface.co/15y6u87/MaLiang">🤗 Model</a><a class="btn" href="https://huggingface.co/datasets/15y6u87/MaLiang-Data">🤗 Data</a></div>
+  </div>
+</header>
+<main>
+<section id="abstract"><div class="wrap"><div class="abs">
+  <div><div class="eyebrow">01 / Paper summary</div><h3 class="title">Abstract</h3></div>
+  <p>Video models now render game footage of remarkable quality, and recent systems use them as the renderer of an executable game: a simulator keeps the world state and rules, and the video model paints the frames. Most connect the two through a visual proxy&mdash;white-box, low-poly or colour-coded videos encoded by a video autoencoder&mdash;so every world must first be built and drawn in an engine. <b>MaLiang removes this detour.</b> Its <em>numerical proxy</em> is a per-pixel integer map of the whole world, including characters, body parts and attack effects; <em>Native Numerical Conditioning</em> adds it to a video diffusion transformer through a 9.4M-parameter class-pooling encoder, with no rendered video and no visual encoder; and the map becomes a <em>Numerical Canvas</em> that game rules edit and the model paints. With backbone and data fixed, integer conditioning matches colour-coded inputs in image quality and layout and controls characters and effects more precisely, even against a colour encoder of identical cost. Distilled into a causal student that streams in real time, MaLiang renders edits in the next step and paints unseen procedural worlds. On held-out recordings it reaches lower FVD (154 vs. 391) than the strongest off-the-shelf renderer, a 33B model, at statistically tied semantic accuracy.</p>
+</div>
+<div class="kpis">
+  <div class="card kpi"><b>154</b><span>FVD on 100 held-out clips (33B SolarRenderer: 391)</span></div>
+  <div class="card kpi"><b>29×</b><span>faster than SolarRenderer; MaLiang streams in real time</span></div>
+  <div class="card kpi"><b>9.4M</b><span>class-pooling encoder, no visual encoder</span></div>
+  <div class="card kpi"><b>next step</b><span>an edit to the map is painted in the next 0.25-s step</span></div>
+</div></div></section>
+
+<section id="overview" style="padding-top:40px"><div class="wrap">
+  <div class="eyebrow">02 / System at a glance</div><h3 class="title">Overview</h3>
+  <p class="sub">A renderer should not need a render pass.</p>
+  <p class="lead">Prior game renderers feed the video model a proxy video that an engine must first draw, or a colour-coded map through a video VAE. MaLiang gives it the game's own numbers.</p>
+  <div class="fig white"><img src="assets/fig/overview.jpg" alt="Visual proxy vs. colour-coded map vs. numerical proxy"></div>
+  <p class="cap">Map, generated frame and edit are real outputs.</p>
+  <p class="sub" style="margin-top:44px;font-size:26px">Six worlds, painted from their maps.</p>
+  <p class="lead">Each card plays the map the model received (left) next to what it painted (right), in sync.</p>
+  <div class="mgrid"><div class="pair"><div class="vv"><video data-src="clips/W4_map.mp4" muted loop playsinline></video><video data-src="clips/W4.mp4" poster="clips/W4.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>procedural map</b></div></div><div class="pair"><div class="vv"><video data-src="clips/S3_map.mp4" muted loop playsinline></video><video data-src="clips/S3.mp4" poster="clips/S3.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>same map · cyberpunk</b></div></div><div class="pair"><div class="vv"><video data-src="clips/G5_map.mp4" muted loop playsinline></video><video data-src="clips/G5.mp4" poster="clips/G5.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>rule adds a house</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W9_map.mp4" muted loop playsinline></video><video data-src="clips/W9.mp4" poster="clips/W9.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>procedural · village</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W13_map.mp4" muted loop playsinline></video><video data-src="clips/W13.mp4" poster="clips/W13.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>night</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W7_map.mp4" muted loop playsinline></video><video data-src="clips/W7.mp4" poster="clips/W7.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>recorded map · cyberpunk</b></div></div></div>
+</div></section>
+
+<section id="architecture" class="night"><div class="wrap">
+  <div class="eyebrow">03 / Four-layer closed loop</div><h3 class="title">Architecture</h3>
+  <p class="sub">One map in. One 0.25-second step out. Repeat.</p>
+  <p class="lead">L1 the game rasterises its state into an integer map; L2 a pooling encoder turns it into class shares added to the patch embedding; L3 a causal student generates four frames per step; L4 game rules edit the map, which the next step paints.</p>
+  <div class="fig white" style="border:0"><img src="assets/fig/arch.jpg" alt="MaLiang framework"></div>
+  <div class="layers">
+    <div class="card layer"><div class="lid">L1</div><div class="what">What the game writes</div><h4>Numerical proxy</h4><p>One 832×480 map of class ids per frame.</p><ul><li>24 classes</li><li>scene · body parts · effects</li><li>same code for data and game</li></ul></div>
+    <div class="card layer"><div class="lid">L2</div><div class="what">How the model reads it</div><h4>Native conditioning</h4><p>Each 4×4 block becomes the share of each class.</p><ul><li>9.4M params</li><li>no visual encoder</li><li>added to patch embedding</li></ul></div>
+    <div class="card layer"><div class="lid">L3</div><div class="what">How frames are made</div><h4>Causal student</h4><p>Wan2.2-TI2V-5B teacher distilled in three stages.</p><ul><li>4 denoising steps</li><li>KV cache: 3 sink + 17 recent</li><li>streams in real time</li></ul></div>
+    <div class="card layer"><div class="lid">L4</div><div class="what">What play does</div><h4>Numerical canvas</h4><p>Rules and the player write classes into the map.</p><ul><li>no extra network</li><li>painted next step</li><li>rules unseen in training</li></ul></div>
+  </div>
+</div></section>
+
+<section id="examples"><div class="wrap">
+  <div class="eyebrow">04 / Across worlds</div><h3 class="title">Examples</h3>
+  <p class="sub">One step, end to end.</p>
+  <p class="lead">For three worlds: the map at time t (L1), the class shares of one block next to the character (L2), the step's inputs (L3), and the painted frames (L4).</p>
+  <div class="fig white"><img src="assets/fig/examples.jpg" alt="Examples across worlds"></div>
+  <p class="cap">All values are read from the real maps.</p>
+</div></section>
+
+<section id="results" style="padding-top:40px"><div class="wrap">
+  <div class="eyebrow">05 / Systems and interfaces</div><h3 class="title">Results</h3>
+  <p class="sub">Lower FVD than a 33B renderer, 29× faster.</p>
+  <p class="lead">One protocol for all methods: 100 five-second clips from ten recordings never seen in training, every output resampled to a common grid, and the same appearance, semantic and entity metrics.</p>
+  <div class="panel"><div class="eyebrow">Main comparison</div><h4>MaLiang leads in quality and speed.</h4>
+    <div class="nums"><div><b>154 <small>vs 391</small></b><span>FVD ↓ vs. SolarRenderer (33B)</span></div><div><b>29× <small>faster</small></b><span>MaLiang vs. the offline 33B renderer</span></div><div><b>62.3 <small>vs 62.7</small></b><span>mIoU, statistically tied (paired bootstrap)</span></div></div>
+    <table><thead><tr><th>System</th><th class="l">Backbone</th><th class="l">What the video model sees</th><th>FVD ↓</th><th>LPIPS ↓</th><th>mIoU ↑</th><th>Halluc. ↓</th><th>Speed ↑</th></tr></thead><tbody>
+    <tr><td>AnyGameRenderer</td><td class="l">H3 33B</td><td class="l">primitive proxy video</td><td>879</td><td>0.796</td><td>19.8</td><td>39.4</td><td>0.005×</td></tr>
+    <tr><td>CWM</td><td class="l">H3 33B</td><td class="l">depth + semantic maps</td><td>708</td><td>0.705</td><td>28.3</td><td>25.7</td><td>0.003×</td></tr>
+    <tr><td>SolarRenderer</td><td class="l">H3 33B</td><td class="l">colour-coded structure video</td><td>391</td><td>0.407</td><td>62.7</td><td>15.5</td><td>0.034×</td></tr>
+    <tr class="ours"><td>MaLiang (ours)</td><td class="l">Wan2.2 5B</td><td class="l">integer map</td><td>154</td><td>0.327</td><td>62.3</td><td>12.2</td><td>1×</td></tr></tbody></table>
+    <p class="cap">29× = 21.8 fps / 0.75 fps (Tab. 1 of the paper). Speed column: relative to MaLiang on the same hardware.</p></div>
+  <div class="panel"><div class="eyebrow">Interface ablation · same backbone, data and recipe</div><h4>Integers control effects most precisely, at the cost of a light encoder.</h4>
+    <table><thead><tr><th>Condition</th><th>Effect response ↑</th><th>Timing ↑</th><th>Position IoU ↑</th><th>Encoder cost ↓</th></tr></thead><tbody>
+    <tr><td>(1) colour video → video VAE</td><td>51.5</td><td>87.1</td><td>0.559</td><td>55×</td></tr>
+    <tr><td>(2) colour video → light encoder</td><td>57.5</td><td>90.8</td><td>0.563</td><td>1×</td></tr>
+    <tr class="ours"><td>(3) integer map (ours)</td><td>61.0</td><td>93.7</td><td>0.579</td><td>1×</td></tr></tbody></table>
+    <p class="cap">100 test clips (94 with boss attacks); position gains are significant in each of three seeds. A VACE branch (+2.4B) reading the colour map is also less precise (Appendix, Sec. C).</p></div>
+  <p class="sub" style="margin-top:56px;font-size:28px">Same map, four worlds.</p>
+  <p class="lead">One recorded play session; the exact same map sequence, four first frames. Layout, characters and timing follow the map; materials and light follow the first frame.</p>
+  <div class="styles4">
+    <div class="cell"><video data-src="clips/S1_map.mp4" muted loop playsinline></video><span class="t">MAP</span></div>
+    <div class="cell"><video data-src="clips/S1.mp4" muted loop playsinline></video><span class="t">winter</span></div>
+    <div class="cell"><video data-src="clips/S2.mp4" muted loop playsinline></video><span class="t">cartoon</span></div>
+    <div class="cell"><video data-src="clips/S3.mp4" muted loop playsinline></video><span class="t">cyberpunk</span></div>
+    <div class="cell"><video data-src="clips/S4.mp4" muted loop playsinline></video><span class="t">night</span></div>
+  </div>
+  <div class="gal" id="gallery"><div class="eyebrow">Qualitative results</div><p class="sub" style="font-size:28px">Gallery</p>
+    <p class="lead">Cases on held-out clips. Hover or tap a clip to see the map it received.</p>
+    <div class="tabs" id="tabs"></div><p class="tabnote" id="tabnote"></p><div class="grid" id="grid"></div></div>
+</div></section>
+
+<section id="dataset" class="night"><div class="wrap">
+  <div class="eyebrow">06 / Data</div><h3 class="title">Dataset</h3>
+  <div class="ds"><div>
+    <p class="sub">Ten Unreal Engine scenes, recorded with their integer maps.</p>
+    <p class="lead">A top-down action game with a player and a boss. Every clip is 5 s (81 frames) at 16 fps and 832×480, with RGB frames, the integer map, camera matrices and character capsules. Boss attack effects from a sprite library are composited onto photoreal clips and labelled with four effect classes.</p>
+    <div class="stats"><div class="card stat"><b>11,955</b><span>training clips · 5,205 photoreal + 6,750 re-styled</span></div><div class="card stat"><b>256</b><span>recordings in 10 scenes</span></div><div class="card stat"><b>1,893</b><span>clips with boss attack effects</span></div><div class="card stat"><b>100</b><span>held-out test clips · 10 unseen recordings</span></div></div>
+  </div></div><div class="dsfig" style="margin-top:30px"><img src="assets/fig/dataset.jpg" alt="Data collection" style="width:100%"></div>
+</div></section>
+
+<section id="rollout" class="night" style="padding-top:40px;border-top:1px solid #16233a"><div class="wrap">
+  <div class="eyebrow">07 / Walkthrough</div><h3 class="title">Walkthrough</h3>
+  <p class="sub">From a map of numbers to a painted, editable world.</p>
+  <p class="lead">A short captioned tour: the game writes a map of class ids, the same map is painted in different worlds, and game rules edit the map while the next step paints the change. Every shot shows the map the model received as an inset.</p>
+  <div class="rollout" style="max-width:1100px;margin-left:auto;margin-right:auto"><video src="assets/walkthrough.mp4" controls muted playsinline preload="metadata" poster="assets/img/rollout_poster.jpg"></video></div>
+</div></section>
+
+<section id="video"><div class="wrap">
+  <div class="eyebrow">08 / Video</div><h3 class="title">Video</h3><p class="sub">One map. Endless worlds.</p>
+  <p class="lead">New cases recorded from the browser game; the inset shows the map the model received. With sound.</p>
+  <div class="vid"><video id="mainVideo" src="assets/maliang_video.mp4" controls playsinline preload="metadata" poster="assets/img/video_poster.jpg"></video></div>
+</div></section>
+</main>
+<footer><div class="wrap"><span>MALIANG · YEYING LAB</span><span> <a href="#top">Back to top ↑</a></span></div></footer>
+<div class="modal" id="modal"><button id="closeModal" aria-label="Close">✕</button><video id="modalVideo" controls playsinline preload="none"></video></div>
+<script>window.GALLERY = {"tabs": [{"name": "Worlds & styles", "note": "Recorded and restyled worlds; the map decides layout and motion, the first frame the look.", "clips": [{"id": "W6", "label": "recorded map \u00b7 winter"}, {"id": "W7", "label": "recorded map \u00b7 cyberpunk"}, {"id": "W8", "label": "late autumn"}, {"id": "W11", "label": "snow plaza"}, {"id": "W13", "label": "night"}, {"id": "W14", "label": "medieval village"}, {"id": "W15", "label": "desert oasis"}, {"id": "W19", "label": "autumn village"}, {"id": "W22", "label": "autumn plaza"}]}, {"name": "Procedural worlds", "note": "Maps that no game recording contains, painted from a first frame.", "clips": [{"id": "W4", "label": "procedural \u00b7 medieval"}, {"id": "W5", "label": "procedural \u00b7 desert"}, {"id": "W9", "label": "procedural \u00b7 village"}, {"id": "W10", "label": "procedural \u00b7 oasis"}, {"id": "W23", "label": "procedural \u00b7 village (2)"}, {"id": "W24", "label": "procedural \u00b7 oasis (2)"}]}, {"name": "Heroes & bosses", "note": "Bodies, weapons and boss attack effects are classes in the map.", "clips": [{"id": "H1", "label": "attack \u2192 the boss grows"}, {"id": "H2", "label": "night plaza"}, {"id": "H3", "label": "medieval village"}, {"id": "H4", "label": "tower court"}, {"id": "H5", "label": "player and boss"}]}, {"name": "Play & edit", "note": "Game rules write classes into the map; the model paints them in the next step.", "clips": [{"id": "G7", "label": "a rule writes MALIANG into the ground"}, {"id": "G5", "label": "a rule adds a house"}]}]};</script>
+<script>
+(function () {
+  const $ = id => document.getElementById(id);
+  const modal = $("modal"), mv = $("modalVideo");
+  $("playVideo").onclick = () => { mv.src = "assets/maliang_video.mp4"; modal.classList.add("on"); mv.play().catch(() => {}); };
+  const close = () => { mv.pause(); modal.classList.remove("on"); };
+  $("closeModal").onclick = close; modal.addEventListener("click", e => { if (e.target === modal) close(); });
+  document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
+  const links = [...document.querySelectorAll("#nav a")];
+  const obs = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) links.forEach(a => a.classList.toggle("on", a.getAttribute("href") === "#" + e.target.id)); }), {rootMargin: "-45% 0px -50% 0px"});
+  document.querySelectorAll("main section").forEach(s => obs.observe(s));
+  // synced groups: every .pair and the styles4 row play together while visible
+  function group(el) {
+    const vs = [...el.querySelectorAll("video")]; vs.forEach(v => { if (!v.src) v.src = v.dataset.src; });
+    const lead = vs[vs.length > 2 ? 1 : 1];
+    lead.addEventListener("timeupdate", () => vs.forEach(v => { if (v !== lead && Math.abs(v.currentTime - lead.currentTime) > 0.15) v.currentTime = lead.currentTime; }));
+    new IntersectionObserver(es => es.forEach(e => vs.forEach(v => e.isIntersecting ? v.play().catch(() => {}) : v.pause())), {threshold: .25}).observe(el);
+  }
+  document.querySelectorAll(".pair, .styles4").forEach(group);
+  const G = window.GALLERY, tabs = $("tabs"), grid = $("grid"), note = $("tabnote");
+  function show(k) {
+    [...tabs.children].forEach((b, i) => b.classList.toggle("on", i === k));
+    const t = G.tabs[k]; note.textContent = t.note || ""; grid.innerHTML = "";
+    t.clips.forEach(c => {
+      const d = document.createElement("div"); d.className = "tile";
+      d.innerHTML = `<video muted loop playsinline preload="metadata" poster="clips/${c.id}.jpg" src="clips/${c.id}.mp4"></video>` +
+        `<video class="m" muted loop playsinline preload="none" src="clips/${c.id}_map.mp4"></video>` +
+        `<div class="lbl"><span>${c.label}</span><span class="k">hover = MAP</span></div>`;
+      const [g, m] = d.querySelectorAll("video");
+      new IntersectionObserver(es => es.forEach(e => e.isIntersecting ? g.play().catch(() => {}) : g.pause()), {threshold: .2}).observe(d);
+      const on = () => { m.currentTime = g.currentTime; m.play().catch(() => {}); }, off = () => m.pause();
+      d.addEventListener("mouseenter", on); d.addEventListener("mouseleave", off);
+      d.addEventListener("click", () => { d.classList.toggle("show"); d.classList.contains("show") ? on() : off(); });
+      g.addEventListener("timeupdate", () => { if (!m.paused && Math.abs(m.currentTime - g.currentTime) > 0.15) m.currentTime = g.currentTime; });
+      grid.appendChild(d);
+    });
+  }
+  G.tabs.forEach((t, i) => { const b = document.createElement("button"); b.textContent = t.name; b.onclick = () => show(i); tabs.appendChild(b); });
+  show(0);
+})();
+</script>
+</body></html>

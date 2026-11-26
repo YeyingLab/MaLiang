@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>MaLiang: Painting Playable Game Worlds from Numbers</title>
-<link rel="icon" type="image/png" href="assets/img/favicon.png?v=2">
-<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=2">
+<link rel="icon" type="image/png" href="assets/img/favicon.png?v=3">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png?v=3">
 <style>
 @font-face { font-family: "Lato"; font-weight: 300; src: url("assets/fonts/lato-light.woff") format("woff"); }
 @font-face { font-family: "Lato"; font-weight: 400; src: url("assets/fonts/lato-regular.woff") format("woff"); }
@@ -33,7 +33,15 @@ img, video { display: block; max-width: 100%; }
 .hero .in { position: relative; z-index: 2; text-align: center; padding: 110px 24px 70px; max-width: 1040px; }
 .pill { display: inline-block; font: 700 12px/1 var(--mono); letter-spacing: 2.2px; text-transform: uppercase; color: #cfd8e3;
         border: 1px solid #33465f; background: rgba(16,28,48,.75); padding: 9px 12px; border-radius: 6px; }
-.hero .mascot { width: 140px; margin: 22px auto -8px; filter: drop-shadow(0 12px 24px rgba(0,0,0,.55)); }
+.hero .mwrap { position: relative; width: 156px; margin: 18px auto -6px; }
+.hero .mascot { position: relative; width: 100%; display: block; filter: drop-shadow(0 14px 22px rgba(0,0,0,.45)); animation: mfloat 4.6s ease-in-out infinite; transform-origin: 46% 85%; will-change: transform; }
+.hero .mwrap .ink { position: absolute; left: 50%; top: 62%; width: 150px; height: 150px; margin: -75px 0 0 -75px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(110,190,255,.42) 0%, rgba(90,200,150,.22) 38%, rgba(0,0,0,0) 70%); filter: blur(6px); animation: mink 4.6s ease-in-out infinite; }
+.hero .mwrap:hover .mascot { animation: mfloat 4.6s ease-in-out infinite, mwave .9s ease-in-out 1; }
+@keyframes mfloat { 0%,100% { transform: translateY(0) rotate(-2.5deg); } 25% { transform: translateY(-7px) rotate(1deg); } 50% { transform: translateY(-12px) rotate(3deg); } 75% { transform: translateY(-5px) rotate(0deg); } }
+@keyframes mink { 0%,100% { transform: scale(.85); opacity: .65; } 50% { transform: scale(1.15); opacity: 1; } }
+@keyframes mwave { 0%,100% { rotate: 0deg; } 30% { rotate: -6deg; } 65% { rotate: 5deg; } }
+@media (prefers-reduced-motion: reduce) { .hero .mascot, .hero .mwrap .ink { animation: none; } }
 .hero h1 { font-weight: 900; font-size: clamp(66px, 11vw, 156px); line-height: .95; margin: 12px 0 8px; letter-spacing: -2px; text-shadow: 0 6px 30px rgba(0,0,0,.5); }
 .hero h2 { font-weight: 700; font-size: clamp(24px, 3.2vw, 42px); line-height: 1.2; margin: 4px 0 20px; text-shadow: 0 4px 20px rgba(0,0,0,.5); }
 .hero .anon a{color:inherit;text-decoration:underline;text-underline-offset:3px}
@@ -158,6 +166,52 @@ footer a { color: var(--amber); }
 .ds { display: block !important; }
 .stats { grid-template-columns: repeat(4, 1fr) !important; }
 @media (max-width: 960px) { .stats { grid-template-columns: 1fr 1fr !important; } }
+
+/* overview figure: paper-style panels built from real frames */
+.ovf { margin: 30px 0 0; display: flex; flex-direction: column; gap: 14px; }
+.ovf-top { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.ovp { border-radius: 14px; padding: 14px 16px 12px; border: 1.5px solid; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.ovp.bad { background: #fbf3f3; border-color: #e4b9b9; }
+.ovp.good { background: #f0f8f2; border-color: #9fcfac; }
+.ovh { font-size: 16.5px; color: var(--ink); }
+.ovh .k { font: 700 13px/1 var(--mono); color: var(--mute); margin-right: 4px; }
+.ovp.good .ovh b { color: #1f7a3d; }
+.ovrow { display: grid; grid-template-columns: 1.35fr 1fr; gap: 12px; align-items: center; }
+.ovimg { position: relative; border-radius: 8px; overflow: hidden; background: #000; line-height: 0; min-width: 0; }
+.ovimg img { width: 100%; display: block; }
+.ovimg .tg { position: absolute; left: 6px; top: 6px; font: 600 11px/1.6 var(--mono); color: #fff; background: rgba(10,20,36,.72); padding: 1px 7px; border-radius: 5px; }
+.ovimg .tg.gen { background: rgba(31,122,61,.85); }
+.ovpipe { display: flex; flex-direction: column; align-items: center; gap: 4px; font: 12.5px/1.35 var(--mono); color: var(--ink2); text-align: center; }
+.ovpipe span { border: 1px solid #d9c3c3; background: #fff; border-radius: 7px; padding: 5px 10px; }
+.ovpipe span.vm { border-color: #b9c3d1; background: #eef2f7; font-weight: 700; }
+.ovpipe em, .ovarr em { font-style: normal; color: #c0392b; font-weight: 700; }
+.ovarr em { color: #1f7a3d; }
+.ovpipe i { font-style: normal; color: var(--mute); transform: rotate(90deg); }
+.ovv { margin: 0; font-size: 14.5px; color: var(--ink2); }
+.ovv .x { color: #c0392b; font-weight: 900; margin-right: 6px; }
+.ovseq { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr; gap: 8px; align-items: center; }
+.ovarr { display: flex; flex-direction: column; align-items: center; gap: 2px; font: 11.5px/1.3 var(--mono); color: var(--ink2); text-align: center; max-width: 120px; }
+.ovarr i { font-style: normal; font-size: 20px; color: #1f7a3d; }
+.ovarr.rule span { color: #b26a00; } .ovarr.rule i { color: #b26a00; }
+.ovchk { display: flex; flex-wrap: wrap; gap: 6px 26px; font-size: 14.5px; color: var(--ink2); }
+.ovchk b { color: #1f7a3d; margin-right: 6px; }
+@media (max-width: 860px) {
+  .ovf-top { grid-template-columns: 1fr; }
+  .ovseq { grid-template-columns: 1fr 1fr; }
+  .ovseq .ovarr { display: none; }
+}
+
+.smbox { margin-top: 22px; }
+.smtabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+.smtab { font: 600 13px/1 var(--mono); padding: 9px 14px; border-radius: 999px; border: 1px solid var(--line); background: var(--white); color: var(--ink2); cursor: pointer; }
+.smtab.on { background: var(--ink); color: #fff; border-color: var(--ink); }
+.smrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+.smrow[hidden] { display: none; }
+.smrow .cell { border-radius: 12px; overflow: hidden; background: #000; position: relative; line-height: 0; }
+.smrow video { width: 100%; aspect-ratio: 832/480; object-fit: cover; }
+.smrow .t { position: absolute; left: 8px; top: 8px; font: 700 12px/1 var(--mono); background: rgba(10,20,36,.8); color: #fff; padding: 6px 8px; border-radius: 6px; }
+.smrow .cell:first-child .t { background: rgba(47,111,228,.9); }
+@media (max-width: 700px) { .smrow { grid-template-columns: 1fr 1fr; } }
 </style></head>
 <body>
 <a class="skip" href="#abstract">Skip to content</a>
@@ -168,7 +222,7 @@ footer a { color: var(--amber); }
 <header class="hero" id="top">
   <video class="bg" src="assets/hero_wall.mp4" muted loop autoplay playsinline preload="auto" aria-hidden="true"></video>
   <div class="in">
-    <img class="mascot" src="assets/img/mascot.png" alt="MaLiang mascot">
+    <div class="mwrap"><span class="ink"></span><img class="mascot" src="assets/img/mascot.png?v=2" alt="MaLiang mascot"></div>
     <h1>MaLiang</h1>
     <h2>Painting Playable Game Worlds from Numbers</h2>
     <p class="anon authors"><a href="https://teawhite.cn/">Zhiyang Deng</a><sup>1,2,*</sup> · <a href="https://github.com/sylvana20">Shushan Xu</a><sup>1,3,*</sup> · <a href="https://github.com/jinyeying">Yeying Jin</a><sup>1,2,♢</sup><br><small><sup>1</sup>Tencent · <sup>2</sup>National University of Singapore · <sup>3</sup>Nanyang Technological University<br><sup>*</sup>Equal contribution · <sup>♢</sup>Corresponding author and project leader</small></p>
@@ -193,8 +247,8 @@ footer a { color: var(--amber); }
   <div class="eyebrow">02 / System at a glance</div><h3 class="title">Overview</h3>
   <p class="sub">A renderer should not need a render pass.</p>
   <p class="lead">Prior game renderers feed the video model a proxy video that an engine must first draw, or a colour-coded map through a video VAE. MaLiang gives it the game's own numbers.</p>
-  <div class="fig white"><img src="assets/fig/overview.jpg" alt="Visual proxy vs. colour-coded map vs. numerical proxy"></div>
-  <p class="cap">Map, generated frame and edit are real outputs.</p>
+  <div class="fig white"><img src="assets/fig/overview_v3.jpg?v=2" alt="Visual proxy vs. colour-coded map vs. numerical proxy"></div>
+  <p class="cap">All images are real: (a) and (b) show the two proxy inputs of one training frame; in (c) the maps and frames come from a real-time rollout of our model, where a rule adds a house.</p>
   <p class="sub" style="margin-top:44px;font-size:26px">Six worlds, painted from their maps.</p>
   <p class="lead">Each card plays the map the model received (left) next to what it painted (right), in sync.</p>
   <div class="mgrid"><div class="pair"><div class="vv"><video data-src="clips/W4_map.mp4" muted loop playsinline></video><video data-src="clips/W4.mp4" poster="clips/W4.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>procedural map</b></div></div><div class="pair"><div class="vv"><video data-src="clips/S3_map.mp4" muted loop playsinline></video><video data-src="clips/S3.mp4" poster="clips/S3.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>same map · cyberpunk</b></div></div><div class="pair"><div class="vv"><video data-src="clips/G5_map.mp4" muted loop playsinline></video><video data-src="clips/G5.mp4" poster="clips/G5.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>rule adds a house</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W9_map.mp4" muted loop playsinline></video><video data-src="clips/W9.mp4" poster="clips/W9.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>procedural · village</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W13_map.mp4" muted loop playsinline></video><video data-src="clips/W13.mp4" poster="clips/W13.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>night</b></div></div><div class="pair"><div class="vv"><video data-src="clips/W7_map.mp4" muted loop playsinline></video><video data-src="clips/W7.mp4" poster="clips/W7.jpg" muted loop playsinline></video></div><div class="cap2"><span>map → generated</span><b>recorded map · cyberpunk</b></div></div></div>
@@ -217,7 +271,7 @@ footer a { color: var(--amber); }
   <div class="eyebrow">04 / Across worlds</div><h3 class="title">Examples</h3>
   <p class="sub">One step, end to end.</p>
   <p class="lead">For three worlds: the map at time t (L1), the class shares of one block next to the character (L2), the step's inputs (L3), and the painted frames (L4).</p>
-  <div class="fig white"><img src="assets/fig/examples.jpg" alt="Examples across worlds"></div>
+  <div class="fig white"><img src="assets/fig/examples_v3.jpg" alt="Examples across worlds"></div>
   <p class="cap">All values are read from the real maps.</p>
 </div></section>
 
@@ -239,14 +293,13 @@ footer a { color: var(--amber); }
     <tr><td>(2) colour video → light encoder</td><td>57.5</td><td>90.8</td><td>0.563</td><td>1×</td></tr>
     <tr class="ours"><td>(3) integer map (ours)</td><td>61.0</td><td>93.7</td><td>0.579</td><td>1×</td></tr></tbody></table>
     <p class="cap">100 test clips (94 with boss attacks); position gains are significant in each of three seeds. A VACE branch (+2.4B) reading the colour map is also less precise (Appendix, Sec. C).</p></div>
-  <p class="sub" style="margin-top:56px;font-size:28px">Same map, four worlds.</p>
-  <p class="lead">One recorded play session; the exact same map sequence, four first frames. Layout, characters and timing follow the map; materials and light follow the first frame.</p>
-  <div class="styles4">
-    <div class="cell"><video data-src="clips/S1_map.mp4" muted loop playsinline></video><span class="t">MAP</span></div>
-    <div class="cell"><video data-src="clips/S1.mp4" muted loop playsinline></video><span class="t">winter</span></div>
-    <div class="cell"><video data-src="clips/S2.mp4" muted loop playsinline></video><span class="t">cartoon</span></div>
-    <div class="cell"><video data-src="clips/S3.mp4" muted loop playsinline></video><span class="t">cyberpunk</span></div>
-    <div class="cell"><video data-src="clips/S4.mp4" muted loop playsinline></video><span class="t">night</span></div>
+  <p class="sub" style="margin-top:56px;font-size:28px">Same map, many worlds.</p>
+  <p class="lead">Four recorded play sessions. In each, the exact same map sequence is replayed from five different first frames: layout, characters, effects and timing follow the map; materials and light follow the first frame.</p>
+  <div class="smbox" id="worlds"><div class="smtabs"><button class="smtab on" data-k="0">Map 1 · village walk</button><button class="smtab" data-k="1">Map 2 · boss fight</button><button class="smtab" data-k="2">Map 3 · boss attack effect</button><button class="smtab" data-k="3">Map 4 · courtyard fight</button></div>
+    <div class="smrow"><div class="cell"><video data-src="clips/sm/m1_map.mp4" poster="clips/sm/m1_map.jpg" muted loop playsinline></video><span class="t">MAP</span></div><div class="cell"><video data-src="clips/sm/m1_winter.mp4" poster="clips/sm/m1_winter.jpg" muted loop playsinline></video><span class="t">winter</span></div><div class="cell"><video data-src="clips/sm/m1_cartoon.mp4" poster="clips/sm/m1_cartoon.jpg" muted loop playsinline></video><span class="t">cartoon</span></div><div class="cell"><video data-src="clips/sm/m1_cyberpunk.mp4" poster="clips/sm/m1_cyberpunk.jpg" muted loop playsinline></video><span class="t">cyberpunk</span></div><div class="cell"><video data-src="clips/sm/m1_night.mp4" poster="clips/sm/m1_night.jpg" muted loop playsinline></video><span class="t">night</span></div><div class="cell"><video data-src="clips/sm/m1_medieval.mp4" poster="clips/sm/m1_medieval.jpg" muted loop playsinline></video><span class="t">medieval</span></div></div>
+    <div class="smrow" hidden><div class="cell"><video data-src="clips/sm/m2_map.mp4" poster="clips/sm/m2_map.jpg" muted loop playsinline></video><span class="t">MAP</span></div><div class="cell"><video data-src="clips/sm/m2_winter.mp4" poster="clips/sm/m2_winter.jpg" muted loop playsinline></video><span class="t">winter</span></div><div class="cell"><video data-src="clips/sm/m2_autumn.mp4" poster="clips/sm/m2_autumn.jpg" muted loop playsinline></video><span class="t">autumn</span></div><div class="cell"><video data-src="clips/sm/m2_desert.mp4" poster="clips/sm/m2_desert.jpg" muted loop playsinline></video><span class="t">desert</span></div><div class="cell"><video data-src="clips/sm/m2_scifi.mp4" poster="clips/sm/m2_scifi.jpg" muted loop playsinline></video><span class="t">scifi</span></div><div class="cell"><video data-src="clips/sm/m2_night.mp4" poster="clips/sm/m2_night.jpg" muted loop playsinline></video><span class="t">night</span></div></div>
+    <div class="smrow" hidden><div class="cell"><video data-src="clips/sm/m3_map.mp4" poster="clips/sm/m3_map.jpg" muted loop playsinline></video><span class="t">MAP</span></div><div class="cell"><video data-src="clips/sm/m3_cartoon.mp4" poster="clips/sm/m3_cartoon.jpg" muted loop playsinline></video><span class="t">cartoon</span></div><div class="cell"><video data-src="clips/sm/m3_chinese.mp4" poster="clips/sm/m3_chinese.jpg" muted loop playsinline></video><span class="t">chinese</span></div><div class="cell"><video data-src="clips/sm/m3_beach.mp4" poster="clips/sm/m3_beach.jpg" muted loop playsinline></video><span class="t">beach</span></div><div class="cell"><video data-src="clips/sm/m3_cyberpunk.mp4" poster="clips/sm/m3_cyberpunk.jpg" muted loop playsinline></video><span class="t">cyberpunk</span></div><div class="cell"><video data-src="clips/sm/m3_winter.mp4" poster="clips/sm/m3_winter.jpg" muted loop playsinline></video><span class="t">winter</span></div></div>
+    <div class="smrow" hidden><div class="cell"><video data-src="clips/sm/m4_map.mp4" poster="clips/sm/m4_map.jpg" muted loop playsinline></video><span class="t">MAP</span></div><div class="cell"><video data-src="clips/sm/m4_medieval.mp4" poster="clips/sm/m4_medieval.jpg" muted loop playsinline></video><span class="t">medieval</span></div><div class="cell"><video data-src="clips/sm/m4_desert.mp4" poster="clips/sm/m4_desert.jpg" muted loop playsinline></video><span class="t">desert</span></div><div class="cell"><video data-src="clips/sm/m4_night.mp4" poster="clips/sm/m4_night.jpg" muted loop playsinline></video><span class="t">night</span></div><div class="cell"><video data-src="clips/sm/m4_cartoon.mp4" poster="clips/sm/m4_cartoon.jpg" muted loop playsinline></video><span class="t">cartoon</span></div><div class="cell"><video data-src="clips/sm/m4_autumn.mp4" poster="clips/sm/m4_autumn.jpg" muted loop playsinline></video><span class="t">autumn</span></div></div>
   </div>
   <div class="gal" id="gallery"><div class="eyebrow">Qualitative results</div><p class="sub" style="font-size:28px">Gallery</p>
     <p class="lead">Cases on held-out clips. Hover or tap a clip to see the map it received.</p>
@@ -259,7 +312,7 @@ footer a { color: var(--amber); }
     <p class="sub">Ten Unreal Engine scenes, recorded with their integer maps.</p>
     <p class="lead">A top-down action game with a player and a boss. Every clip is 5 s (81 frames) at 16 fps and 832×480, with RGB frames, the integer map, camera matrices and character capsules. Boss attack effects from a sprite library are composited onto photoreal clips and labelled with four effect classes.</p>
     <div class="stats"><div class="card stat"><b>11,955</b><span>training clips · 5,205 photoreal + 6,750 re-styled</span></div><div class="card stat"><b>256</b><span>recordings in 10 scenes</span></div><div class="card stat"><b>1,893</b><span>clips with boss attack effects</span></div><div class="card stat"><b>100</b><span>held-out test clips · 10 unseen recordings</span></div></div>
-  </div></div><div class="dsfig" style="margin-top:30px"><img src="assets/fig/dataset.jpg" alt="Data collection" style="width:100%"></div>
+  </div></div><div class="dsfig" style="margin-top:30px"><img src="assets/fig/dataset_v3.jpg" alt="Data collection" style="width:100%"></div>
 </div></section>
 
 <section id="rollout" class="night" style="padding-top:40px;border-top:1px solid #16233a"><div class="wrap">
@@ -272,7 +325,7 @@ footer a { color: var(--amber); }
 <section id="video"><div class="wrap">
   <div class="eyebrow">08 / Video</div><h3 class="title">Video</h3><p class="sub">One map. Endless worlds.</p>
   <p class="lead">New cases recorded from the browser game; the inset shows the map the model received. With sound.</p>
-  <div class="vid"><video id="mainVideo" src="assets/maliang_video.mp4" controls playsinline preload="metadata" poster="assets/img/video_poster.jpg"></video></div>
+  <div class="vid"><video id="mainVideo" src="assets/maliang_video.mp4?v=2" controls playsinline preload="metadata" poster="assets/img/video_poster.jpg?v=2"></video></div>
 </div></section>
 </main>
 <footer><div class="wrap"><span>MALIANG · YEYING LAB</span><span> <a href="#top">Back to top ↑</a></span></div></footer>
@@ -282,7 +335,7 @@ footer a { color: var(--amber); }
 (function () {
   const $ = id => document.getElementById(id);
   const modal = $("modal"), mv = $("modalVideo");
-  $("playVideo").onclick = () => { mv.src = "assets/maliang_video.mp4"; modal.classList.add("on"); mv.play().catch(() => {}); };
+  $("playVideo").onclick = () => { mv.src = "assets/maliang_video.mp4?v=2"; modal.classList.add("on"); mv.play().catch(() => {}); };
   const close = () => { mv.pause(); modal.classList.remove("on"); };
   $("closeModal").onclick = close; modal.addEventListener("click", e => { if (e.target === modal) close(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });
@@ -296,7 +349,26 @@ footer a { color: var(--amber); }
     lead.addEventListener("timeupdate", () => vs.forEach(v => { if (v !== lead && Math.abs(v.currentTime - lead.currentTime) > 0.15) v.currentTime = lead.currentTime; }));
     new IntersectionObserver(es => es.forEach(e => vs.forEach(v => e.isIntersecting ? v.play().catch(() => {}) : v.pause())), {threshold: .25}).observe(el);
   }
-  document.querySelectorAll(".pair, .styles4").forEach(group);
+  document.querySelectorAll(".pair").forEach(group);
+  // same map, many worlds: one row at a time, videos load when their row is shown and play in sync
+  (function () {
+    const rows = [...document.querySelectorAll(".smrow")], tabs = [...document.querySelectorAll(".smtab")];
+    let vis = false;
+    function sync(row) {
+      const vs = [...row.querySelectorAll("video")]; vs.forEach(v => { if (!v.src) v.src = v.dataset.src; });
+      if (!row._lead) { row._lead = vs[1]; row._lead.addEventListener("timeupdate", () => vs.forEach(v => { if (v !== row._lead && Math.abs(v.currentTime - row._lead.currentTime) > 0.15) v.currentTime = row._lead.currentTime; })); }
+      return vs;
+    }
+    function show(k) {
+      rows.forEach((r, i) => { r.hidden = i !== k; r.querySelectorAll("video").forEach(v => v.pause()); });
+      tabs.forEach((b, i) => b.classList.toggle("on", i === k));
+      const vs = sync(rows[k]); vs.forEach(v => { v.currentTime = 0; if (vis) v.play().catch(() => {}); });
+    }
+    tabs.forEach((b, i) => b.addEventListener("click", () => show(i)));
+    const box = document.querySelector(".smbox");
+    new IntersectionObserver(es => es.forEach(e => { vis = e.isIntersecting; const r = rows.find(x => !x.hidden); sync(r).forEach(v => vis ? v.play().catch(() => {}) : v.pause()); }), {threshold: .2}).observe(box);
+  })();
+
   const G = window.GALLERY, tabs = $("tabs"), grid = $("grid"), note = $("tabnote");
   function show(k) {
     [...tabs.children].forEach((b, i) => b.classList.toggle("on", i === k));

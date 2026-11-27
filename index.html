@@ -325,7 +325,7 @@ footer a { color: var(--amber); }
 <section id="video"><div class="wrap">
   <div class="eyebrow">08 / Video</div><h3 class="title">Video</h3><p class="sub">One map. Endless worlds.</p>
   <p class="lead">New cases recorded from the browser game; the inset shows the map the model received. With sound.</p>
-  <div class="vid"><video id="mainVideo" src="assets/maliang_video.mp4?v=2" controls playsinline preload="metadata" poster="assets/img/video_poster.jpg?v=2"></video></div>
+  <div class="vid"><video id="mainVideo" src="assets/maliang_video.mp4?v=3" controls playsinline preload="metadata" poster="assets/img/video_poster.jpg?v=2"></video></div>
 </div></section>
 </main>
 <footer><div class="wrap"><span>MALIANG · YEYING LAB</span><span> <a href="#top">Back to top ↑</a></span></div></footer>
@@ -335,7 +335,7 @@ footer a { color: var(--amber); }
 (function () {
   const $ = id => document.getElementById(id);
   const modal = $("modal"), mv = $("modalVideo");
-  $("playVideo").onclick = () => { mv.src = "assets/maliang_video.mp4?v=2"; modal.classList.add("on"); mv.play().catch(() => {}); };
+  $("playVideo").onclick = () => { mv.src = "assets/maliang_video.mp4?v=3"; modal.classList.add("on"); mv.play().catch(() => {}); };
   const close = () => { mv.pause(); modal.classList.remove("on"); };
   $("closeModal").onclick = close; modal.addEventListener("click", e => { if (e.target === modal) close(); });
   document.addEventListener("keydown", e => { if (e.key === "Escape") close(); });

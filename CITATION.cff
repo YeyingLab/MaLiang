@@ -3,7 +3,12 @@ message: "If you use this code or these checkpoints, please cite the paper."
 title: "MaLiang: Painting Playable Game Worlds from Numbers"
 type: software
 authors:
-  - name: "Anonymous"
+  - family-names: "Deng"
+    given-names: "Zhiyang"
+  - family-names: "Xu"
+    given-names: "Shushan"
+  - family-names: "Jin"
+    given-names: "Yeying"
 repository-code: "https://github.com/YeyingLab/MaLiang"
 license: Apache-2.0
 year: 2027

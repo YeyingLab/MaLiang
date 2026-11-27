@@ -1,21 +1,67 @@
+<div align="center">
+
+<img src="assets/readme/mascot.png" width="96">
+
 # MaLiang: Painting Playable Game Worlds from Numbers
 
-Code and checkpoints for **“MaLiang: Painting Playable Game Worlds from Numbers.”**
+[Zhiyang Deng](https://teawhite.cn/)<sup>1,2,\*</sup> · [Shushan Xu](https://github.com/sylvana20)<sup>1,3,\*</sup> · [Yeying Jin](https://github.com/jinyeying)<sup>1,2,♢</sup>
 
-MaLiang renders a game world directly from the game state. The state is rasterised into a
-per-pixel `uint8` **integer class map** and injected into a 5B-parameter Wan2.2-TI2V video
-diffusion transformer through a small class-pooling encoder — no rendered proxy video and
-no video-VAE encode of the state. A three-stage distillation pipeline (teacher forcing →
-consistency distillation → DMD) turns the bidirectional teacher into a causal four-step
-student for real-time streaming.
+<sup>1</sup>Tencent · <sup>2</sup>National University of Singapore · <sup>3</sup>Nanyang Technological University
+<br><sup>\*</sup>Equal contribution · <sup>♢</sup>Corresponding author and project leader
 
-This repository contains the code that produced the paper's numbers and the five checkpoints used
-for the reported tables.
+[![Project Page](https://img.shields.io/badge/Project-Page-4b8bbe.svg)](https://sylvana20.github.io/maliang/)
+[![Model](https://img.shields.io/badge/%F0%9F%A4%97-Model-ffcc4d.svg)](https://huggingface.co/15y6u87/MaLiang)
+[![Data](https://img.shields.io/badge/%F0%9F%A4%97-Data-ffcc4d.svg)](https://huggingface.co/datasets/15y6u87/MaLiang-Data)
+[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
+
+<img src="assets/readme/teaser.jpg" width="100%">
+
+**A game hands a video model one integer per pixel. The model paints the world, live.**<br>
+Watch the video and the interactive examples on the [project page](https://sylvana20.github.io/maliang/).
+
+</div>
+
+## News
+
+- **2026-11** Training, distillation, inference and evaluation code, the five checkpoints of the paper and the raw training recordings are released.
+
+## Overview
+
+Video models now render game footage of remarkable quality, and recent systems use them as the renderer of an
+executable game: a simulator keeps the world state and rules, and the video model paints the frames. Most connect
+the two through a visual proxy (white-box, low-poly or colour-coded video encoded by a video autoencoder), so every
+world must first be built and drawn in an engine. **MaLiang removes this detour.** Its *numerical proxy* is a
+per-pixel integer map of the whole world, including characters, body parts and attack effects; *native numerical
+conditioning* adds it to a Wan2.2-TI2V-5B video diffusion transformer through a 9.4M-parameter class-pooling
+encoder, with no rendered video and no visual encoder; and the map becomes a *numerical canvas* that game rules edit
+and the model paints.
+
+<div align="center"><img src="assets/readme/overview.jpg" width="100%"><br><em>A visual proxy and a colour-coded map against MaLiang's numerical proxy. All images are real; (c) is a real-time rollout where a rule adds a house to the map.</em></div>
+
+## Highlights
+
+- **Numbers in, world out.** The game rasterises its state into one class id per pixel; a class-pooling encoder turns each 4×4 block into class shares that are added to the patch embedding. No render pass, no visual encoder.
+- **Precise characters and effects.** With backbone and data fixed, integer conditioning matches colour-coded inputs in image quality and controls layout, characters and attack effects more precisely, even against a colour encoder of identical cost.
+- **Real time.** Distilled into a four-step causal student (teacher forcing → consistency distillation → DMD), MaLiang streams at 22 frames per second on one GPU.
+- **Edit while playing.** Anything the game writes into the map, such as a house, a wall, a boss clone or a rock, is painted in the next step; one map can be replayed from any first frame to give a new world.
+- **Strong results.** On held-out recordings MaLiang reaches lower FVD (154 vs. 391) than the strongest off-the-shelf renderer, a 33B model, at statistically tied semantic accuracy.
+
+<div align="center"><img src="assets/readme/examples.jpg" width="100%"><br><em>Three steps of the real-time model: the integer map, the class shares of one block, the step inputs and the painted next step.</em></div>
+
+## Method
+
+<div align="center"><img src="assets/readme/architecture.jpg" width="100%"><br><em>The four-layer closed loop: numerical proxy (L1), native numerical conditioning (L2), causal student (L3) and numerical canvas (L4).</em></div>
 
 ## Model zoo
 
-All checkpoints are bf16 safetensors, `vocab=parts_fx`, resolution 832×480. Download the
-model archive and put the files under `models/`.
+All checkpoints are bf16 safetensors, `vocab=parts_fx`, resolution 832×480, hosted on
+[Hugging Face](https://huggingface.co/15y6u87/MaLiang):
+
+```bash
+pip install -U huggingface_hub
+hf download 15y6u87/MaLiang --local-dir models
+cd models && sha256sum -c models.sha256 && cd ..
+```
 
 | File | Role | Metadata |
 | --- | --- | --- |
@@ -25,7 +71,7 @@ model archive and put the files under `models/`.
 | `abl_color_light_step-5000.safetensors` | Ablation ②: coloured video → light encoder | 831 keys, `cond_mode=color_light`, step 5000 |
 | `abl_v3_ids_step-5000.safetensors` | Ablation ③/④: integer map → `gc_sem_cond` | 831 keys, step 5000; step-5000 snapshot of the same SFT run as the teacher |
 
-`models.sha256` in the model archive lists the SHA-256 of each released file.
+`models.sha256` lists the SHA-256 of each released file.
 
 ## Repository layout
 
@@ -94,7 +140,9 @@ export DIFFSYNTH_SKIP_DOWNLOAD=True
 
 ## Data
 
-Download the game recordings used in the paper and the Wan2.2 base model, then
+<div align="center"><img src="assets/readme/dataset.jpg" width="100%"><br><em>Training data: 256 recordings in 10 Unreal Engine scenes, labelled per frame and cut into 81-frame clips.</em></div>
+
+Download the raw game recordings ([`15y6u87/MaLiang-Data`](https://huggingface.co/datasets/15y6u87/MaLiang-Data), 482 GB) and the Wan2.2 base model, then
 prepare the fxcond_v1 training data:
 
 ```
@@ -277,13 +325,7 @@ A BibTeX entry will be added once the paper is public.
 
 ## Downloads
 
-- **Code + assets:** [release v1.0](https://github.com/YeyingLab/MaLiang/releases/tag/v1.0)
-  (`maliang-v1-code.zip`, `maliang-v1-code+assets.zip`).
-- **Checkpoints:** [release v1.0-models](https://github.com/YeyingLab/MaLiang/releases/tag/v1.0-models),
-  26 parts. Reassemble and verify with:
-
-```bash
-bash scripts/download_models.sh
-```
-
-The five files are described in [Model zoo](#model-zoo) and in `models.sha256`.
+- **Checkpoints:** [`15y6u87/MaLiang`](https://huggingface.co/15y6u87/MaLiang) on Hugging Face (`hf download 15y6u87/MaLiang --local-dir models`).
+  The same five files are also kept as 26 parts in [release v1.0-models](https://github.com/YeyingLab/MaLiang/releases/tag/v1.0-models) (`bash scripts/download_models.sh`).
+- **Training data:** [`15y6u87/MaLiang-Data`](https://huggingface.co/datasets/15y6u87/MaLiang-Data) on Hugging Face (raw recordings, research use only).
+- **Code + assets:** [release v1.0](https://github.com/YeyingLab/MaLiang/releases/tag/v1.0) (`maliang-v1-code.zip`, `maliang-v1-code+assets.zip`).

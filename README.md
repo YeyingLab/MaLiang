@@ -12,7 +12,8 @@
 [![Project Page](https://img.shields.io/badge/Project-Page-4b8bbe.svg)](https://sylvana20.github.io/maliang/)
 [![Model](https://img.shields.io/badge/%F0%9F%A4%97-Model-ffcc4d.svg)](https://huggingface.co/15y6u87/MaLiang)
 [![Data](https://img.shields.io/badge/%F0%9F%A4%97-Data-ffcc4d.svg)](https://huggingface.co/datasets/15y6u87/MaLiang-Data)
-[![License](https://img.shields.io/badge/license-Apache%202.0-green.svg)](LICENSE)
+[![Code License](https://img.shields.io/badge/code-Apache%202.0-green.svg)](LICENSE)
+[![Weights License](https://img.shields.io/badge/weights%20%26%20data-research%20only-lightgrey.svg)](#-license)
 
 <img src="assets/readme/teaser.jpg" width="100%">
 
@@ -75,7 +76,7 @@ and the model paints.
 
 ## 📦 Model zoo
 
-All checkpoints are bf16 safetensors, `vocab=parts_fx`, resolution 832×480, hosted on
+All checkpoints are bf16 safetensors, `vocab=parts_fx`, resolution 832×480, released for research use only and hosted on
 [Hugging Face](https://huggingface.co/15y6u87/MaLiang):
 
 ```bash
@@ -353,7 +354,7 @@ and a 17-cell KV window it streams in real time on one GPU.
 
 ## 📜 License
 
-Apache-2.0. See `LICENSE` and `NOTICE`. The checkpoints are released for research use; the training data is for research use only;
+The code is Apache-2.0 (see `LICENSE` and `NOTICE`). The checkpoints and the training data are released for **research use only**;
 third-party components (Wan2.2, DiffSynth-Studio, LPIPS, SegFormer, I3D) keep their upstream licenses.
 
 ## 🙏 Acknowledgements
@@ -371,7 +372,7 @@ If you find this work useful, please cite:
 ```bibtex
 @misc{maliang2026,
   title  = {MaLiang: Painting Playable Game Worlds from Numbers},
-  author = {Zhiyang Deng and Shushan Xu and Yeying Jin},
+  author = {Deng, Zhiyang and Xu, Shushan and Jin, Yeying},
   year   = {2026},
   url    = {https://github.com/YeyingLab/MaLiang}
 }
